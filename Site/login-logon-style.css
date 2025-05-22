@@ -27,12 +27,12 @@ body {
 }
 
 .formulario h2 {
-    color: rgb(66, 66, 66);
+    color: #424242;
     margin-bottom: 10px;
 }
 
 .formulario h4 {
-    color:rgb(66, 66, 66);
+    color:#424242;
 }
 
 .formulario input {
@@ -46,7 +46,7 @@ body {
 }
 
 .botao-principal {
-    background-color: #2645ac;
+    background-color: #009c73;
     color: white;
     padding: 8px;
     border: none;
@@ -58,7 +58,7 @@ body {
 }
 
 .botao-secundario {
-    background-color: #2645ac;
+    background-color: #009c73;
     color: white;
     padding: 8px;
     border: none;
@@ -70,7 +70,7 @@ body {
 }
 
 .formulario button:hover {
-    background-color: #2d51c7;
+    background-color: #00bf8b;
 }
 
 h4 {
