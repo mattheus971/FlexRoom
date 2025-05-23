@@ -46,7 +46,7 @@ body {
 }
 
 .botao-principal {
-    background-color: #009c73;
+    background-color: #00dc96;
     color: white;
     padding: 8px;
     border: none;
@@ -58,7 +58,7 @@ body {
 }
 
 .botao-secundario {
-    background-color: #009c73;
+    background-color: #00dc96;
     color: white;
     padding: 8px;
     border: none;
@@ -70,7 +70,7 @@ body {
 }
 
 .formulario button:hover {
-    background-color: #00bf8b;
+    background-color: #00eba0;
 }
 
 h4 {

@@ -15,4 +15,10 @@ function cadastrarUsuario() {
 function logar() {
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
+
+    if (email && senha) {
+        alert(email + "\n" + senha)
+    } else {
+        alert("Por favor, preencha todos os campos.");
+    }
 }
