@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <link rel="stylesheet" href="login-logon-style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesse sua conta</title>
+</head>
+<body>
+    <div id="container-logo">
+        <h1 onclick="window.location.href='home.html'">LOGO</h1>
+    </div>
+
+    <div id="container-login-logon">
+        <div class="container-formulario" id="formulario-login">
+            <h1>Acesse sua conta</h1>
+            <div class="container-inputs">
+                <input type="email" placeholder="Email" id="email">
+                <input type="password" placeholder="Senha" id="senha">
+            </div>
+            <button onclick="logar()" class="botao-confirmar">Entrar</button>
+            <p>Ainda não tem uma conta?</p>
+            <button class="botao-seletor" onclick="mostrarCadastro()">Criar conta</button>
+        </div>
+
+        <div class="container-formulario" id="formulario-cadastro">
+            <h1>Crie sua conta</h1>
+            <div class="container-inputs">
+                <input type="text" placeholder="Nome" id="usuario">
+                <input type="email" placeholder="Email" id="email-cadastro">
+                <input type="password" placeholder="Senha" id="senha-cadastro">
+                <input type="tel" placeholder="Número de telefone" id="telefone">
+            </div>
+            <button onclick="cadastrarUsuario()" class="botao-confirmar">Criar</button>
+            <p>Já tem uma conta?</p>
+            <button class="botao-seletor" onclick="mostrarLogin()">Entrar</button>
+        </div>
+    </div>
+    <script src="login-logon-script.js"></script>
+</body>
+</html>
