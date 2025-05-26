@@ -1,0 +1,78 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header{
+  height: 100px;
+  width: 100%;
+  background-color: #00cf96;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 48px;
+  font-weight: bold;
+  color: #007455;
+  cursor: pointer;
+}
+
+.container-usuario{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 64px 0px 64px 0px;
+}
+
+.container-usuario h1{
+  color: rgb(68, 68, 68);
+}
+
+.avatar-usuario{
+  background-color:whitesmoke;
+  border: solid #007455 4px;
+  height: 128px;
+  width: 128px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 54px;
+}
+
+.container-anuncios{
+  border: solid rgb(175, 175, 175) 1px;
+  border-radius: 8px;
+  height: 74px;
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 28px 36px 28px;
+}
+
+.container-anuncios h2{
+  font-weight: 500;
+}
+
+.container-anuncios p{
+  color: rgb(68, 68, 68);
+}
+
+.container-anuncios:hover{
+  background-color: whitesmoke;
+  cursor: pointer;
+}

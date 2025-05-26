@@ -1,4 +1,3 @@
-/* Resetando margens e paddings */
 * {
   margin: 0;
   padding: 0;
@@ -32,8 +31,8 @@ header .logo {
 }
 
 header .pesquisa {
-  width: 350px;
-  height: 34px;
+  width: 400px;
+  height: 36px;
   padding: 8px;
   border-radius: 8px;
   border: solid #00926a 2px;
