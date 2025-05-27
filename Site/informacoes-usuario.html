@@ -1,33 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Informações do Usuário</title>
   <link rel="stylesheet" href="informacoes-usuario-style.css">
 </head>
+
 <body>
 
   <header>
     <div class="logo" onclick="window.location.href='home.html'">LOGO</div>
   </header>
-    
+
   <div class="container-usuario">
     <div class="avatar-usuario" id="inicial-usuario">M</div>
     <h1>Olá Matheus</h1>
   </div>
 
-  <div class="container-anuncios">
+  <div class="campo-anuncios">
     <div>
-      <h2>Meus anúncios</h2>
+      <h2 style="font-size: 20px;">Meus anúncios</h2>
       <p>Clique para ver seus anúncios</p>
     </div>
-    <h1 style="color: rgb(68, 68, 68);">></h1>
+    <h1 style="color: rgb(107, 107, 107);">></h1>
   </div>
 
-  <div class="informacoes-usuario"></div>
-  
+  <div class="campo-informacoes">
+    <div class="cabecalho">
+      <h2 style="font-size: 20px;">Informações pessoais</h2>
+      <p>Clique para alterar suas informações</p>
+    </div>
+
+    <div class="campo" id="campo-nome">
+      <div>
+        <label for="nome" style="margin-right: 128px;">Nome</label>
+        <h3>Matheus Velozo</h3>
+      </div>
+      <div>
+        <h1>></h1>
+      </div>
+    </div>
+
+    <div class="campo" id="campo-email">
+      <div>
+        <label for="nome" style="margin-right: 128px;">Email</label>
+        <h3>matheus@email.com</h3>
+      </div>
+      <div>
+        <h1>></h1>
+      </div>
+    </div>
+
+    <div class="campo" id="campo-senha">
+      <div>
+        <label for="nome" style="margin-right: 128px;">Senha</label>
+        <h3>123456</h3>
+      </div>
+      <div>
+        <h1>></h1>
+      </div>
+    </div>
+
+    <div class="campo" id="campo-nascimento">
+      <div>
+        <label for="nome" style="margin-right: 128px;">Data de nascimento</label>
+        <h3>01/01/2000</h3>
+      </div>
+      <div>
+        <h1>></h1>
+      </div>
+    </div>
+
+    <div class="campo" id="campo-telefone">
+      <div>
+        <label for="nome" style="margin-right: 128px;">Telefone</label>
+        <h3>48 9 9999-9999</h3>
+      </div>
+      <div>
+        <h1>></h1>
+      </div>
+    </div>
+  </div>
+
+  <button>Sair</button>
 
   <script src=""></script>
 </body>
+
 </html>

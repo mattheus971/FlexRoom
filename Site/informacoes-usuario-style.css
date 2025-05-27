@@ -9,6 +9,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 header{
@@ -52,7 +53,7 @@ header .logo {
   font-size: 54px;
 }
 
-.container-anuncios{
+.campo-anuncios{
   border: solid rgb(175, 175, 175) 1px;
   border-radius: 8px;
   height: 74px;
@@ -62,17 +63,72 @@ header .logo {
   justify-content: space-between;
   align-items: center;
   padding: 28px 28px 36px 28px;
+  margin-bottom: 32px;
 }
 
-.container-anuncios h2{
+.campo-anuncios h2{
   font-weight: 500;
 }
 
-.container-anuncios p{
+.campo-anuncios p{
   color: rgb(68, 68, 68);
 }
 
-.container-anuncios:hover{
+.campo-anuncios:hover{
   background-color: whitesmoke;
   cursor: pointer;
+}
+
+.campo-informacoes{
+  border: solid rgb(175, 175, 175) 1px;
+  border-radius: 8px;
+  min-height: 100px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding-top: 8px;
+}
+
+.campo-informacoes .cabecalho{
+  margin-bottom: 12px;
+  padding-left: 28px;
+}
+
+.campo-informacoes h2{
+  font-weight: 500;
+}
+
+.campo-informacoes p{
+  color: rgb(68, 68, 68);
+}
+
+.campo{
+  border-top: solid rgb(175, 175, 175) 1px ;
+  height: 74px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 28px 0px 28px;
+}
+
+.campo h3{
+  font-weight: 600;
+}
+
+.campo h3, h1{
+  color: rgb(107, 107, 107);
+}
+
+.campo:hover{
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.campo div{
+  display: flex;
+  flex-direction: row;
 }
