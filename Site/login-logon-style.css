@@ -43,12 +43,12 @@ body{
     border-radius: 24px;
     min-height: 300px;
     min-width: 400px;
-    box-shadow: grey 0px 10px 50px;
+    box-shadow: rgba(0, 0, 0, 0.233) 0px 10px 30px;
     transition: 0.5s ease;
 }
 
 .container-formulario:hover{
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 
 #formulario-cadastro{
@@ -98,8 +98,8 @@ input::placeholder {
 }
 
 .botao-confirmar:hover{
-    background-color: #00cf96;
-    color: #004734;
+    background-color: #00a87b;
+    color: white;
 }
 
 p{
@@ -118,7 +118,7 @@ p{
 }
 
 .botao-seletor:hover{
-    background-color: #00cf96;
-    color: #004734;
+    background-color: #00a87b;
+    color: #ffffff;
 }
 

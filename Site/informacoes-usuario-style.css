@@ -9,7 +9,6 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
 }
 
 header{
@@ -28,17 +27,20 @@ header .logo {
   cursor: pointer;
 }
 
+.container-conteudo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin: 50px 0px 50px 0px;
+}
+
 .container-usuario{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin: 64px 0px 64px 0px;
-}
-
-.container-usuario h1{
-  color: rgb(68, 68, 68);
 }
 
 .avatar-usuario{
@@ -53,6 +55,10 @@ header .logo {
   font-size: 54px;
 }
 
+.container-usuario h1{
+  color: rgb(68, 68, 68);
+}
+
 .campo-anuncios{
   border: solid rgb(175, 175, 175) 1px;
   border-radius: 8px;
@@ -63,7 +69,6 @@ header .logo {
   justify-content: space-between;
   align-items: center;
   padding: 28px 28px 32px 28px;
-  margin-bottom: 32px;
   cursor: pointer;
 }
 
@@ -117,9 +122,10 @@ header .logo {
 
 .campo h3{
   font-weight: 600;
+  color: rgb(107, 107, 107);
 }
 
-.campo h3, h1{
+.campo h1{
   color: rgb(107, 107, 107);
 }
 
@@ -130,6 +136,22 @@ header .logo {
 .campo div{
   display: flex;
   flex-direction: row;
+}
+
+#botao-sair{
+  padding: 8px;
+  width: 128px;
+  background-color: grey;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+#botao-sair:hover{
+  background-color: rgb(212, 38, 38);
 }
 
 /* fazer div .conteiner-conteudo que engloba tudo */

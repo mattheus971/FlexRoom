@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Informações do usuário</title>
   <link rel="stylesheet" href="informacoes-usuario-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -14,77 +15,80 @@
     <div class="logo" onclick="window.location.href='home.html'">LOGO</div>
   </header>
 
-  <div class="container-usuario">
-    <div class="avatar-usuario" id="inicial-usuario">M</div>
-    <h1>Olá Matheus</h1>
+  <div class="container-conteudo">
+    <div class="container-usuario">
+      <div class="avatar-usuario" id="inicial-usuario">M</div>
+      <h1>Olá Matheus</h1>
+    </div>
+
+    <div class="campo-anuncios">
+      <div>
+        <h2 style="font-size: 20px;">Meus anúncios</h2>
+        <p>Clique para ver seus anúncios</p>
+      </div>
+      <h1 style="color: rgb(107, 107, 107);">></h1>
+    </div>
+
+    <div class="campo-informacoes">
+      <div class="cabecalho">
+        <h2 style="font-size: 20px;">Informações pessoais</h2>
+        <p>Clique para alterar suas informações</p>
+      </div>
+
+      <div class="campo" id="campo-nome" style="border-top: none;">
+        <div>
+          <label for="nome" style="margin-right: 154px;">Nome</label>
+          <h3>Matheus Velozo</h3>
+        </div>
+        <div>
+          <h1>></h1>
+        </div>
+      </div>
+
+      <div class="campo" id="campo-email">
+        <div>
+          <label for="nome" style="margin-right: 160px;">Email</label>
+          <h3>matheus@email.com</h3>
+        </div>
+        <div>
+          <h1>></h1>
+        </div>
+      </div>
+
+      <div class="campo" id="campo-senha">
+        <div>
+          <label for="nome" style="margin-right: 155px;">Senha</label>
+          <h3>123456</h3>
+        </div>
+        <div>
+          <h1>></h1>
+        </div>
+      </div>
+
+      <div class="campo" id="campo-nascimento">
+        <div>
+          <label for="nome" style="margin-right: 58px;">Data de nascimento</label>
+          <h3>01/01/2000</h3>
+        </div>
+        <div>
+          <h1>></h1>
+        </div>
+      </div>
+
+      <div class="campo" id="campo-telefone">
+        <div>
+          <label for="nome" style="margin-right: 140px;">Telefone</label>
+          <h3>48 9 9999-9999</h3>
+        </div>
+        <div>
+          <h1>></h1>
+        </div>
+      </div>
+    </div>
+
+    <button id="botao-sair" onclick="window.location.href='login-logon.html'">Sair</button>
   </div>
 
-  <div class="campo-anuncios">
-    <div>
-      <h2 style="font-size: 20px;">Meus anúncios</h2>
-      <p>Clique para ver seus anúncios</p>
-    </div>
-    <h1 style="color: rgb(107, 107, 107);">></h1>
-  </div>
-
-  <div class="campo-informacoes">
-    <div class="cabecalho">
-      <h2 style="font-size: 20px;">Informações pessoais</h2>
-      <p>Clique para alterar suas informações</p>
-    </div>
-
-    <div class="campo" id="campo-nome" style="border-top: none;">
-      <div>
-        <label for="nome" style="margin-right: 128px;">Nome</label>
-        <h3>Matheus Velozo</h3>
-      </div>
-      <div>
-        <h1>></h1>
-      </div>
-    </div>
-
-    <div class="campo" id="campo-email">
-      <div>
-        <label for="nome" style="margin-right: 128px;">Email</label>
-        <h3>matheus@email.com</h3>
-      </div>
-      <div>
-        <h1>></h1>
-      </div>
-    </div>
-
-    <div class="campo" id="campo-senha">
-      <div>
-        <label for="nome" style="margin-right: 128px;">Senha</label>
-        <h3>123456</h3>
-      </div>
-      <div>
-        <h1>></h1>
-      </div>
-    </div>
-
-    <div class="campo" id="campo-nascimento">
-      <div>
-        <label for="nome" style="margin-right: 128px;">Data de nascimento</label>
-        <h3>01/01/2000</h3>
-      </div>
-      <div>
-        <h1>></h1>
-      </div>
-    </div>
-
-    <div class="campo" id="campo-telefone">
-      <div>
-        <label for="nome" style="margin-right: 128px;">Telefone</label>
-        <h3>48 9 9999-9999</h3>
-      </div>
-      <div>
-        <h1>></h1>
-      </div>
-    </div>
-  </div>
-
-  <button>Sair</button>
 
   <script src=""></script>
 </body>
