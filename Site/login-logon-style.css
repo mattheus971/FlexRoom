@@ -48,7 +48,7 @@ body{
 }
 
 .container-formulario:hover{
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 
 #formulario-cadastro{
@@ -98,8 +98,7 @@ input::placeholder {
 }
 
 .botao-confirmar:hover{
-    background-color: #00cf96;
-    color: #004734;
+    background-color: #00ac7e;
 }
 
 p{
@@ -118,7 +117,8 @@ p{
 }
 
 .botao-seletor:hover{
-    background-color: #00cf96;
-    color: #004734;
+    background-color: #00ac7e;
+
 }
+
 
