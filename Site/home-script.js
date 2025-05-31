@@ -1,6 +1,9 @@
-// function inserirLetraUsuario() {
-//     const usuarioInput = document.getElementById('usuario');
-//     const usuarioInicial = document.getElementById('usuario-inicial');
-//     const primeiraLetra = usuarioInput.value.charAt(0).toUpperCase();
-//     usuarioInicial.textContent = primeiraLetra;
+// function esconderTudo(){
+//     document.getElementById('pagina-home').style.display = "none"
+//     document.getElementById('pagina-informacoes-usuario').style.display = "none"
+// }
+
+// function mostrarInformacoesUsuario(){
+//     esconderTudo()
+//     document.getElementById('pagina-informacoes-usuario').style.display = "flex"
 // }

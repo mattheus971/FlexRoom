@@ -87,7 +87,7 @@ header .avatar-usuario {
   cursor: pointer;
 }
 
-.conteiner-conteudo {
+.container-conteudo {
   margin-top: 100px;
   padding: 20px;
   display: flex;
@@ -95,9 +95,6 @@ header .avatar-usuario {
   align-items: center;
 }
 
-/* remover--------------------------- */
-h1 {
-  margin-bottom: 30px;    
-}
+
 
 
