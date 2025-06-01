@@ -59,7 +59,7 @@ header .logo {
   color: rgb(68, 68, 68);
 }
 
-.campo-anuncios{
+.container-anuncios{
   border: solid rgb(175, 175, 175) 1px;
   border-radius: 8px;
   min-height: 74px;
@@ -72,19 +72,19 @@ header .logo {
   cursor: pointer;
 }
 
-.campo-anuncios h2{
+.container-anuncios h2{
   font-weight: 500;
 }
 
-.campo-anuncios p{
+.container-anuncios p{
   color: rgb(68, 68, 68);
 }
 
-.campo-anuncios:hover{
+.container-anuncios:hover{
   background-color: whitesmoke;
 }
 
-.campo-informacoes{
+.container-informacoes{
   border: solid rgb(175, 175, 175) 1px;
   border-radius: 8px;
   min-height: 100px;
@@ -93,18 +93,19 @@ header .logo {
   flex-direction: column;
   justify-content: center;
   align-items: left;
+  overflow: hidden;
 }
 
-.campo-informacoes .cabecalho{
+.container-informacoes .cabecalho{
   /* margin-bottom: 12px; */
   padding: 28px 28px 32px 28px;
 }
 
-.campo-informacoes h2{
+.container-informacoes h2{
   font-weight: 500;
 }
 
-.campo-informacoes p{
+.container-informacoes p{
   color: rgb(68, 68, 68);
 }
 

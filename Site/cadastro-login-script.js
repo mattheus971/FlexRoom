@@ -1,3 +1,5 @@
+inicializar()
+
 function esconderTudo(){
     document.getElementById('formulario-cadastro').style.display = "none"
     document.getElementById('formulario-login').style.display = "none"
@@ -6,19 +8,21 @@ function esconderTudo(){
 function mostrarLogin() {
     esconderTudo()
     document.getElementById('formulario-login').style.display = "flex"
+    document.getElementById('inputEmailLogin').focus()
 }
 
 function mostrarCadastro() {
     esconderTudo()
     document.getElementById('formulario-cadastro').style.display = "flex"
+    document.getElementById('inputNomeCadastro').focus()
 }
 
-function cadastrarUsuario() {
+// function cadastrarUsuario() {
+// }
 
+// function logar() {
+// }
+
+function inicializar(){
+    document.getElementById('inputEmailLogin').focus()
 }
-
-function logar() {
-
-}
-
-// Login e Cadastro com os mesmos id's

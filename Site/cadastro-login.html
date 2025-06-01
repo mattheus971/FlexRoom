@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acesse sua conta</title>
-    <link rel="stylesheet" href="login-logon-style.css">
+    <link rel="stylesheet" href="cadastro-login-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -16,8 +16,8 @@
         <div class="container-formulario" id="formulario-login">
             <h1>Acesse sua conta</h1>
             <div class="container-inputs">
-                <input type="email" placeholder="Email" id="email">
-                <input type="password" placeholder="Senha" id="senha">
+                <input type="email" placeholder="Email" id="inputEmailLogin">
+                <input type="password" placeholder="Senha" id="inputSenhaLogin">
             </div>
             <button onclick="logar()" class="botao-confirmar">Entrar</button>
             <p>Ainda não tem uma conta?</p>
@@ -27,16 +27,17 @@
         <div class="container-formulario" id="formulario-cadastro">
             <h1>Crie sua conta</h1>
             <div class="container-inputs">
-                <input type="text" placeholder="Nome" id="usuario">
-                <input type="email" placeholder="Email" id="email-cadastro">
-                <input type="password" placeholder="Senha" id="senha-cadastro">
-                <input type="tel" placeholder="Número de telefone" id="telefone">
+                <input type="text" placeholder="Nome" id="inputNomeCadastro">
+                <input type="email" placeholder="Email" id="inputEmailCadastro">
+                <input type="password" placeholder="Senha" id="inputSenhaCadastro">
+                <input type="tel" placeholder="Número de telefone" id="inputTelefoneCadastro">
+                <input type="date" placeholder="Data de nascimento" id="inputNascimentoCadastro">
             </div>
             <button onclick="cadastrarUsuario()" class="botao-confirmar">Criar</button>
             <p>Já tem uma conta?</p>
             <button class="botao-seletor" onclick="mostrarLogin()">Entrar</button>
         </div>
     </div>
-    <script src="login-logon-script.js"></script>
+    <script src="cadastro-login-script.js"></script>
 </body>
 </html>
