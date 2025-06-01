@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
     display: flex;
     flex-direction: row;
@@ -26,7 +32,7 @@ body{
 
 #container-login-logon{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -39,10 +45,10 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 32px 64px;
-    border-radius: 24px;
-    min-height: 300px;
-    min-width: 400px;
+    padding: 64px 64px;
+    border-radius: 20px;
+    min-height: 400px;
+    min-width: 600px;
     box-shadow: rgba(0, 0, 0, 0.233) 0px 10px 30px;
     transition: 0.5s ease;
 }
