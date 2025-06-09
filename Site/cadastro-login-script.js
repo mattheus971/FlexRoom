@@ -1,3 +1,6 @@
+function inicializar(){
+    document.getElementById('inputEmailLogin').focus()
+}
 inicializar()
 
 function esconderTudo(){
@@ -23,6 +26,4 @@ function mostrarCadastro() {
 // function logar() {
 // }
 
-function inicializar(){
-    document.getElementById('inputEmailLogin').focus()
-}
+

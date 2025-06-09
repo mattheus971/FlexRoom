@@ -12,7 +12,7 @@
         <h1 onclick="window.location.href='home.html'">LOGO</h1>
     </div>
 
-    <div id="container-login-logon">
+    <div id="container-cadastro-login">
         <div class="container-formulario" id="formulario-login">
             <h1>Acesse sua conta</h1>
             <div class="container-inputs">
@@ -31,13 +31,25 @@
                 <input type="email" placeholder="Email" id="inputEmailCadastro">
                 <input type="password" placeholder="Senha" id="inputSenhaCadastro">
                 <input type="tel" placeholder="Número de telefone" id="inputTelefoneCadastro">
-                <input type="date" placeholder="Data de nascimento" id="inputNascimentoCadastro">
+                <input type="date" placeholder="Data de nascimento" id="inputNascimentoCadastro" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data de nascimento">
             </div>
             <button onclick="cadastrarUsuario()" class="botao-confirmar">Criar</button>
             <p>Já tem uma conta?</p>
             <button class="botao-seletor" onclick="mostrarLogin()">Entrar</button>
         </div>
     </div>
+
+    <!-- EXEMPLO -->
+    <section id="pagina-home">
+    </section>
+
+    <section id="pagina-cadastro-login">
+    </section>
+
+    <section id="pagina-informacoes-usuario">
+    </section>
+
+
     <script src="cadastro-login-script.js"></script>
 </body>
 </html>
