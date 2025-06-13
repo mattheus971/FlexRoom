@@ -34,65 +34,94 @@
         <p>Clique para alterar suas informações</p>
       </div>
 
-      <div class="campo" id="campo-nome" style="border-top: none;">
+      <div class="campo" id="campo-nome" style="border-top: none;" onclick="openModal('nome')">
         <div>
           <label for="nome" style="margin-right: 154px;">Nome</label>
           <h3>Matheus Velozo</h3>
         </div>
         <div>
-          <!-- SUBSTITUIR ABAIXO POR ICONE DE SETA -->
           <i class="fas fa-arrow-right"></i>
         </div>
       </div>
 
-      <div class="campo" id="campo-email">
+      <div class="campo" id="campo-email" onclick="openModal('email')">
         <div>
           <label for="nome" style="margin-right: 160px;">Email</label>
           <h3>matheus@email.com</h3>
         </div>
         <div>
-          <!-- SUBSTITUIR ABAIXO POR ICONE DE SETA -->
           <i class="fas fa-arrow-right"></i>
         </div>
       </div>
 
-      <div class="campo" id="campo-senha">
+      <div class="campo" id="campo-senha" onclick="openModal('senha')">
         <div>
           <label for="nome" style="margin-right: 155px;">Senha</label>
           <h3>123456</h3>
         </div>
         <div>
-          <!-- SUBSTITUIR ABAIXO POR ICONE DE SETA -->
           <i class="fas fa-arrow-right"></i>
         </div>
       </div>
 
-      <div class="campo" id="campo-nascimento">
+      <div class="campo" id="campo-nascimento" onclick="openModal('nascimento')">
         <div>
           <label for="nome" style="margin-right: 58px;">Data de nascimento</label>
           <h3>01/01/2000</h3>
         </div>
         <div>
-          <!-- SUBSTITUIR ABAIXO POR ICONE DE SETA -->
           <i class="fas fa-arrow-right"></i>
         </div>
       </div>
 
-      <div class="campo" id="campo-telefone">
+      <div class="campo" id="campo-telefone" onclick="openModal('telefone')">
         <div>
           <label for="nome" style="margin-right: 140px;">Telefone</label>
           <h3>48 9 9999-9999</h3>
         </div>
         <div>
-          <!-- SUBSTITUIR ABAIXO POR ICONE DE SETA -->
           <i class="fas fa-arrow-right"></i>
         </div>
       </div>
     </div>
 
-    <button id="botao-sair" onclick="window.location.href='login-logon.html'">Sair</button>
+    <button id="botao-sair" onclick="window.location.href='cadastro-login.html'">Sair</button>
   </div>
-  <script src=""></script>
+
+  <!-- Modal de Edição -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Editar Informações</h2>
+
+      <form id="editForm">
+        <div class="modal-field">
+          <label for="editInputNome">Nome</label>
+          <input type="text" id="editInputNome" name="editInputNome" />
+        </div>
+        <div class="modal-field">
+          <label for="editInputEmail">Email</label>
+          <input type="email" id="editInputEmail" name="editInputEmail" />
+        </div>
+        <div class="modal-field">
+          <label for="editInputSenha">Senha</label>
+          <input type="text" id="editInputSenha" name="editInputSenha" />
+        </div>
+        <div class="modal-field">
+          <label for="editInputNascimento">Data de nascimento</label>
+          <input type="date" id="editInputNascimento" name="editInputNascimento" />
+        </div>
+        <div class="modal-field">
+          <label for="editInputTelefone">Telefone</label>
+          <input type="tel" id="editInputTelefone" name="editInputTelefone" />
+        </div>
+
+        <button type="button" onclick="salvarMundancas()">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="informacoes-usuario-script.js"></script>
 </body>
 
 </html>

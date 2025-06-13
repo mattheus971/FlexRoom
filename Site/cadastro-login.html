@@ -16,8 +16,10 @@
         <div class="container-formulario" id="formulario-login">
             <h1>Acesse sua conta</h1>
             <div class="container-inputs">
-                <input type="email" placeholder="Email" id="inputEmailLogin">
-                <input type="password" placeholder="Senha" id="inputSenhaLogin">
+                <label for="email">Email</label>
+                <input type="email" id="inputEmailLogin">
+                <label for="senha">Senha</label>
+                <input type="password" id="inputSenhaLogin">
             </div>
             <button onclick="logar()" class="botao-confirmar">Entrar</button>
             <p>Ainda não tem uma conta?</p>
@@ -27,11 +29,12 @@
         <div class="container-formulario" id="formulario-cadastro">
             <h1>Crie sua conta</h1>
             <div class="container-inputs">
-                <input type="text" placeholder="Nome" id="inputNomeCadastro">
-                <input type="email" placeholder="Email" id="inputEmailCadastro">
-                <input type="password" placeholder="Senha" id="inputSenhaCadastro">
-                <input type="tel" placeholder="Número de telefone" id="inputTelefoneCadastro">
-                <input type="date" placeholder="Data de nascimento" id="inputNascimentoCadastro" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data de nascimento">
+                <label for="nome">Nome</label>
+                <input type="text" id="inputNomeCadastro">
+                <label for="email">Email</label>
+                <input type="email" id="inputEmailCadastro">
+                <label for="senha">Senha</label>
+                <input type="password" id="inputSenhaCadastro">
             </div>
             <button onclick="cadastrarUsuario()" class="botao-confirmar">Criar</button>
             <p>Já tem uma conta?</p>

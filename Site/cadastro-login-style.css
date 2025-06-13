@@ -19,7 +19,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     width: 40%;
     background-color: #00cf96;
 }
@@ -45,16 +45,12 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 64px 64px;
+    padding: 4%;
     border-radius: 20px;
     min-height: 400px;
     min-width: 600px;
     box-shadow: rgba(0, 0, 0, 0.233) 0px 10px 30px;
     transition: 0.5s ease;
-}
-
-.container-formulario:hover{
-    transform: scale(1.03);
 }
 
 #formulario-cadastro{
@@ -70,7 +66,7 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     width: 100%;
     gap: 8px;
     margin: 32px;
@@ -83,10 +79,6 @@ input{
     border: solid 1px grey;
     border-radius: 8px;
     padding: 12px;
-}
-
-input::placeholder {
-  color: black;
 }
 
 .botao-confirmar{
@@ -106,10 +98,11 @@ input::placeholder {
 .botao-confirmar:hover{
     background-color: #00a87b;
     color: white;
+    transform: scale(1.03);
 }
 
 p{
-    margin-top: 28px;
+    margin-top: 8px;
     margin-bottom: 8px;
 }
 
