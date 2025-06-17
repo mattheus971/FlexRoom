@@ -13,7 +13,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
+  height: 64px;
   background-color: #00cf96;
   display: flex;
   justify-content: space-between;
@@ -74,21 +74,43 @@ header .input-pesquisa::placeholder{
 }
 
 header .avatar-usuario {
-  width: 64px;
-  height: 64px;
+  width: 50px;
+  height: 50px;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   border: solid #00926a 2px;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: medium;
   cursor: pointer;
 }
 
+.campo-usuario-cabecalho{
+  min-width: 200px;
+  gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.botao-anunciar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  border: solid 1px #007455;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  background-color: #00926a;
+  color: white;
+
+}
+
 .container-conteudo {
-  margin-top: 100px;
   padding: 20px;
   display: flex;
   flex-direction: column;
