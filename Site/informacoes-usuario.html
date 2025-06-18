@@ -37,7 +37,7 @@
       <div class="campo" id="campo-nome" style="border-top: none;" onclick="openModal('nome')">
         <div>
           <label for="nome" style="margin-right: 154px;">Nome</label>
-          <h3>Matheus Velozo</h3>
+          <h3 id="informacao-nome-usuario"></h3>
         </div>
         <div>
           <i class="fas fa-arrow-right"></i>
@@ -47,7 +47,7 @@
       <div class="campo" id="campo-email" onclick="openModal('email')">
         <div>
           <label for="nome" style="margin-right: 160px;">Email</label>
-          <h3>matheus@email.com</h3>
+          <h3 id="informacao-email-usuario"></h3>
         </div>
         <div>
           <i class="fas fa-arrow-right"></i>
@@ -57,7 +57,7 @@
       <div class="campo" id="campo-senha" onclick="openModal('senha')">
         <div>
           <label for="nome" style="margin-right: 155px;">Senha</label>
-          <h3>123456</h3>
+          <h3 id="informacao-senha-usuario"></h3>
         </div>
         <div>
           <i class="fas fa-arrow-right"></i>
@@ -67,7 +67,7 @@
       <div class="campo" id="campo-nascimento" onclick="openModal('nascimento')">
         <div>
           <label for="nome" style="margin-right: 58px;">Data de nascimento</label>
-          <h3>01/01/2000</h3>
+          <h3 id="informacao-nascimento-usuario"></h3>
         </div>
         <div>
           <i class="fas fa-arrow-right"></i>
@@ -77,7 +77,7 @@
       <div class="campo" id="campo-telefone" onclick="openModal('telefone')">
         <div>
           <label for="nome" style="margin-right: 140px;">Telefone</label>
-          <h3>48 9 9999-9999</h3>
+          <h3 id="informacao-telefone-usuario"></h3>
         </div>
         <div>
           <i class="fas fa-arrow-right"></i>
@@ -116,7 +116,7 @@
           <input type="tel" id="editInputTelefone" name="editInputTelefone" />
         </div>
 
-        <button type="button" onclick="salvarMundancas()">Salvar</button>
+        <button type="button" onclick="salvarMudancas()">Salvar</button>
       </form>
     </div>
   </div>

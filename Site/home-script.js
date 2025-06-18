@@ -1,9 +1,11 @@
-// function esconderTudo(){
-//     document.getElementById('pagina-home').style.display = "none"
-//     document.getElementById('pagina-informacoes-usuario').style.display = "none"
-// }
+window.onload = function() {
+    // Recupera o usuário logado do localStorage
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 
-// function mostrarInformacoesUsuario(){
-//     esconderTudo()
-//     document.getElementById('pagina-informacoes-usuario').style.display = "flex"
-// }
+    if (!usuarioLogado) {
+      // Se não encontrar usuário logado, redireciona para login
+      window.location.href = "cadastro-login.html";
+      return;
+    }
+    console.log('Email do usuário logado:', usuarioLogado.nome);
+}

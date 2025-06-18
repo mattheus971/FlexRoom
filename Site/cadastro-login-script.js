@@ -25,23 +25,38 @@ function mostrarCadastro() {
 
 const usuarios = []
 function cadastrarUsuario() {
-    const nome = document.getElementById('inputNomeCadastro').value
-    const email = document.getElementById('inputEmailCadastro').value
-    const senha = document.getElementById('inputSenhaCadastro').value
+    const nome = document.getElementById('inputNomeCadastro').value;
+    const email = document.getElementById('inputEmailCadastro').value;
+    const senha = document.getElementById('inputSenhaCadastro').value;
 
     if (!nome || !email || !senha) {
         alert("Por favor, preencha todos os campos.");
         return;
-    } else {
-        const usuario = {
-            nome: nome,
-            email: email,
-            senha: senha
-        };
-        usuarios.push(usuario);
-        alert("Usuário cadastrado com sucesso!");
-        mostrarLogin()
     }
+
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    // Opcional: checar se o email já está cadastrado
+    const existeUsuario = usuarios.some(u => u.email === email);
+    if (existeUsuario) {
+        alert("Este email já está cadastrado.");
+        return;
+    }
+
+    const usuario = {
+        nome,
+        email,
+        senha,
+        nascimento: '',
+        telefone: ''
+    };
+
+    usuarios.push(usuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    alert("Usuário cadastrado com sucesso!");
+    mostrarLogin();
+
+    // Limpar campos
     document.getElementById('inputNomeCadastro').value = "";
     document.getElementById('inputEmailCadastro').value = "";
     document.getElementById('inputSenhaCadastro').value = "";
@@ -51,9 +66,15 @@ function logar() {
     const emailLogin = document.getElementById('inputEmailLogin').value;
     const senhaLogin = document.getElementById('inputSenhaLogin').value;
 
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
     const usuarioEncontrado = usuarios.find(u => u.email === emailLogin && u.senha === senhaLogin);
 
     if (usuarioEncontrado) {
+        // Salva o usuário logado no localStorage
+        localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
+        
+        // Redireciona para a página home.html
         window.location.href = "home.html";
     } else {
         alert("Usuário ou senha incorreto");

@@ -58,3 +58,80 @@ window.onclick = function(event) {
     closeModal();
   }
 }
+
+window.onload = function() {
+  const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+  if (!usuarioLogado) {
+    window.location.href = 'cadastro-login.html';
+    return;
+  }
+
+  // Atualiza os campos com os dados do usuário
+  document.getElementById('informacao-nome-usuario').innerText = usuarioLogado.nome || '';
+  document.getElementById('informacao-email-usuario').innerText = usuarioLogado.email || '';
+  document.getElementById('informacao-senha-usuario').innerText = usuarioLogado.senha || '';
+
+  // Se tiver outros campos no objeto usuarioLogado, faça igual
+  // Exemplo:
+  // document.getElementById('nascimentoUsuario').innerText = usuarioLogado.nascimento || 'Não informado';
+  // document.getElementById('telefoneUsuario').innerText = usuarioLogado.telefone || 'Não informado';
+}
+
+function salvarMudancas() {
+  var newValue = '';
+
+  switch(currentField) {
+    case 'nome':
+      newValue = document.getElementById('editInputNome').value.trim();
+      break;
+    case 'email':
+      newValue = document.getElementById('editInputEmail').value.trim();
+      break;
+    case 'senha':
+      newValue = document.getElementById('editInputSenha').value.trim();
+      break;
+    case 'nascimento':
+      newValue = document.getElementById('editInputNascimento').value.trim();
+      break;
+    case 'telefone':
+      newValue = document.getElementById('editInputTelefone').value.trim();
+      break;
+  }
+
+  if (!newValue) {
+    alert("Por favor, preencha o campo.");
+    return;
+  }
+
+  // Atualiza o campo no HTML
+  document.getElementById('informacao-' + currentField + '-usuario').innerText = newValue;
+
+  // Atualiza o campo correspondente na tela principal também (se houver)
+  document.getElementById('campo-' + currentField).querySelector('h3').textContent = newValue;
+
+  // Recupera o usuário logado do localStorage
+  let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+  // Atualiza a propriedade modificada do usuário logado
+  usuarioLogado[currentField] = newValue;
+
+  // Salva novamente o usuário logado no localStorage
+  localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
+
+  // Atualiza o array geral de usuários
+  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+  // Encontra o índice do usuário logado no array (usando o email original, ou outro identificador)
+  const index = usuarios.findIndex(u => u.email === usuarioLogado.email);
+
+  if (index !== -1) {
+    usuarios[index] = usuarioLogado;  // substitui pelo usuário atualizado
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+  }
+
+  alert("Informações atualizadas com sucesso!");
+
+  // Fecha o modal
+  closeModal();
+}
