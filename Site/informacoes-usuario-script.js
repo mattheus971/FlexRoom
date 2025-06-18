@@ -5,16 +5,45 @@ var currentField = '';
 // Função para abrir o modal e preencher o campo correto
 function openModal(field) {
   currentField = field;
-  var fieldElement = document.getElementById('campo-' + field);
-  var value = fieldElement.querySelector('h3').textContent;
 
-  // Preenche o modal com a informação do campo
-  document.getElementById('editInputNome').value = (field === 'nome') ? value : '';
-  document.getElementById('editInputEmail').value = (field === 'email') ? value : '';
-  document.getElementById('editInputSenha').value = (field === 'senha') ? value : '';
-  document.getElementById('editInputNascimento').value = (field === 'nascimento') ? value : '';
-  document.getElementById('editInputTelefone').value = (field === 'telefone') ? value : '';
+  // Pega todos os blocos modal-field
+  const camposModal = document.querySelectorAll('.modal-field');
 
+  camposModal.forEach(campo => {
+    const input = campo.querySelector('input');
+    if (!input) return;
+
+    // Verifica se o id do input corresponde ao campo que deve ser editado
+    if (input.id.toLowerCase().includes(field)) {
+      campo.style.display = 'block';
+    } else {
+      campo.style.display = 'none';
+    }
+  });
+
+  // Pega o valor atual do campo na página para preencher o input
+  var value = document.getElementById('informacao-' + field + '-usuario').textContent;
+
+  // Preenche o input correspondente com o valor atual
+  switch(field) {
+    case 'nome':
+      document.getElementById('editInputNome').value = value;
+      break;
+    case 'email':
+      document.getElementById('editInputEmail').value = value;
+      break;
+    case 'senha':
+      document.getElementById('editInputSenha').value = value;
+      break;
+    case 'nascimento':
+      document.getElementById('editInputNascimento').value = value;
+      break;
+    case 'telefone':
+      document.getElementById('editInputTelefone').value = value;
+      break;
+  }
+
+  // Exibe o modal
   modal.style.display = "block";
 }
 
@@ -71,11 +100,8 @@ window.onload = function() {
   document.getElementById('informacao-nome-usuario').innerText = usuarioLogado.nome || '';
   document.getElementById('informacao-email-usuario').innerText = usuarioLogado.email || '';
   document.getElementById('informacao-senha-usuario').innerText = usuarioLogado.senha || '';
-
-  // Se tiver outros campos no objeto usuarioLogado, faça igual
-  // Exemplo:
-  // document.getElementById('nascimentoUsuario').innerText = usuarioLogado.nascimento || 'Não informado';
-  // document.getElementById('telefoneUsuario').innerText = usuarioLogado.telefone || 'Não informado';
+  document.getElementById('informacao-nascimento-usuario').innerText = usuarioLogado.nascimento || '';
+  document.getElementById('informacao-telefone-usuario').innerText = usuarioLogado.telefone || '';
 }
 
 function salvarMudancas() {
@@ -83,19 +109,19 @@ function salvarMudancas() {
 
   switch(currentField) {
     case 'nome':
-      newValue = document.getElementById('editInputNome').value.trim();
+      newValue = document.getElementById('editInputNome').value
       break;
     case 'email':
-      newValue = document.getElementById('editInputEmail').value.trim();
+      newValue = document.getElementById('editInputEmail').value
       break;
     case 'senha':
-      newValue = document.getElementById('editInputSenha').value.trim();
+      newValue = document.getElementById('editInputSenha').value
       break;
     case 'nascimento':
-      newValue = document.getElementById('editInputNascimento').value.trim();
+      newValue = document.getElementById('editInputNascimento').value
       break;
     case 'telefone':
-      newValue = document.getElementById('editInputTelefone').value.trim();
+      newValue = document.getElementById('editInputTelefone').value
       break;
   }
 

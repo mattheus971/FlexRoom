@@ -204,6 +204,8 @@ header .logo {
 
 /* Estilo para os campos do modal */
 .modal-field {
+  display: flex;
+  flex-direction: column; /* Faz o label ficar em cima do input */
   margin-bottom: 15px;
 }
 
