@@ -16,8 +16,8 @@
   </header>
   <div class="container-conteudo">
     <div class="container-usuario">
-      <div class="avatar-usuario" id="inicial-usuario">M</div>
-      <h1>Olá Matheus</h1>
+      <div class="avatar-usuario" id="avatar-inicial-usuario"></div>
+      <h1 id="saudacao-usuario">Olá</h1>
     </div>
 
     <div class="container-anuncios">
@@ -88,10 +88,10 @@
     <button id="botao-sair" onclick="window.location.href='cadastro-login.html'">Sair</button>
   </div>
 
-  <!-- Modal de Edição -->
+  <!-- Modal de edição -->
   <div id="editModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
+      <span class="fechar" onclick="fecharModal()">&times;</span>
       <h2>Editar Informações</h2>
 
       <form id="editForm">

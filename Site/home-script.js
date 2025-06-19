@@ -7,5 +7,18 @@ window.onload = function() {
       window.location.href = "cadastro-login.html";
       return;
     }
-    console.log('Email do usuário logado:', usuarioLogado.nome);
+    atualizarAvatarInicial(usuarioLogado)
+    
+}
+
+// JavaScript
+function atualizarAvatarInicial(usuarioLogado) {
+  if (usuarioLogado && usuarioLogado.nome) {
+    const primeiraLetra = usuarioLogado.nome.trim().charAt(0).toUpperCase();
+    const avatarDiv = document.getElementById('avatar-inicial-usuario');
+
+    if (avatarDiv) {
+      avatarDiv.textContent = primeiraLetra;
+    }
+  }
 }
