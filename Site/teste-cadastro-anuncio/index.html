@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Anúncio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+        <div class="left">
+            <div class="logo">
+                FlexRoom
+            </div>
+        </div>  
+        
+        <div class="right">
+            <form>
+            <h1>Cadastro de Anúncio</h1>
+            
+            <label>Telefone:</label>
+            <input type="tel" required>
+            
+            <label>Data de nascimento:</label>
+            <input type="date" required>
+            
+            <label>Título:</label>
+            <input type="text" required>
+            
+            <label>Tipo de imóvel:</label>
+            <select>
+                <option>Casa</option>
+                <option>Apartamento</option>
+                <option>Kitnet</option>
+                <option>Comercial</option>
+            </select>
+            
+            <label>Descrição:</label>
+            <input type="text">
+            
+            <label>Subir Fotos:</label>
+            <input type="file" multiple>
+            
+            <label>Número de quartos:</label>
+            <select>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4 ou mais</option>
+            </select>
+
+            <label>Número de banheiros:</label>
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4 ou mais</option>
+            </select>
+            
+            <label>Área (m²):</label>
+            <input type="number">
+            
+            <label>Inclui garagem?</label>
+            <select>
+                <option>Sim</option>
+                <option>Não</option>
+            </select>
+            
+            <label>IPTU (R$):</label>
+            <input type="number" step="0.01">
+            
+            <label>Detalhes do imóvel:</label>
+            <select>
+                <option>Mobilado</option>
+                <option>Sem mobília</option>
+                <option>Em construção</option>
+            </select>
+            
+            <label>Detalhe do condomínio:</label>
+            <select>
+                <option>Condomínio fechado</option>
+                <option>Sem condomínio</option>
+            </select>
+
+            <label>Preço (R$):</label>
+            <input type="number" step="0.01" required>
+            
+            <label>Endereço:</label>
+            <input type="text" required>
+            
+            <label>CEP:</label>
+            <input type="text" required>
+            
+            <input type="submit" value="Cadastrar Anúncio">
+        </form>
+    </div>
+    
+</body>
+</html>

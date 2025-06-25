@@ -1,5 +1,7 @@
 function inicializar() {
     document.getElementById('inputEmailLogin').focus()
+    esconderTudo()
+    mostrarLogin()
 }
 inicializar()
 
@@ -23,7 +25,6 @@ function mostrarCadastro() {
     document.getElementById('inputNomeCadastro').focus()
 }
 
-const usuarios = []
 function cadastrarUsuario() {
     const nome = document.getElementById('inputNomeCadastro').value;
     const email = document.getElementById('inputEmailCadastro').value;

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="container-logo">
-        <h1 onclick="window.location.href='home.html'">LOGO</h1>
+        <h1><a href="home.html" class="logo-link">LOGO</a></h1>
     </div>
 
     <div id="container-cadastro-login">
@@ -17,9 +17,9 @@
             <h1>Acesse sua conta</h1>
             <div class="container-inputs">
                 <label for="email">Email</label>
-                <input type="email" id="inputEmailLogin">
+                <input type="email" name="email" id="inputEmailLogin">
                 <label for="senha">Senha</label>
-                <input type="password" id="inputSenhaLogin">
+                <input type="password" name="senha" id="inputSenhaLogin">
             </div>
             <button onclick="logar()" class="botao-confirmar">Entrar</button>
             <p>Ainda não tem uma conta?</p>
@@ -30,11 +30,11 @@
             <h1>Crie sua conta</h1>
             <div class="container-inputs">
                 <label for="nome">Nome</label>
-                <input type="text" id="inputNomeCadastro">
+                <input type="text" name="nome" id="inputNomeCadastro">
                 <label for="email">Email</label>
-                <input type="email" id="inputEmailCadastro">
+                <input type="email" name="email" id="inputEmailCadastro">
                 <label for="senha">Senha</label>
-                <input type="password" id="inputSenhaCadastro">
+                <input type="password" name="senha" id="inputSenhaCadastro">
             </div>
             <button onclick="cadastrarUsuario()" class="botao-confirmar">Criar</button>
             <p>Já tem uma conta?</p>

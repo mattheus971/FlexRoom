@@ -42,33 +42,6 @@ function openModal(field) {
 function fecharModal() {
   modal.style.display = "none";
 }
-function saveChanges() {
-  var newValue = '';
-
-  switch(currentField) {
-    case 'nome':
-      newValue = document.getElementById('editInputNome').value;
-      break;
-    case 'email':
-      newValue = document.getElementById('editInputEmail').value;
-      break;
-    case 'senha':
-      newValue = document.getElementById('editInputSenha').value;
-      break;
-    case 'nascimento':
-      newValue = document.getElementById('editInputNascimento').value;
-      break;
-    case 'telefone':
-      newValue = document.getElementById('editInputTelefone').value;
-      break;
-  }
-
-  // Atualiza o campo correspondente com o novo valor
-  document.getElementById('campo-' + currentField).querySelector('h3').textContent = newValue;
-
-  // Fecha o modal
-  fecharModal();
-}
 
 window.onclick = function(event) {
   if (event.target == modal) {
@@ -78,14 +51,15 @@ window.onclick = function(event) {
 
 window.onload = function() {
   const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
-  atualizarAvatarInicial(usuarioLogado);
 
   if (!usuarioLogado) {
     window.location.href = 'cadastro-login.html';
     return;
   }
 
-  document.getElementById('saudacao-usuario').innerText = "Olá "+usuarioLogado.nome || '';
+  atualizarAvatarInicial(usuarioLogado);
+
+  document.getElementById('saudacao-usuario').innerText = "Olá " + (usuarioLogado.nome || '');
   document.getElementById('informacao-nome-usuario').innerText = usuarioLogado.nome || '';
   document.getElementById('informacao-email-usuario').innerText = usuarioLogado.email || '';
   document.getElementById('informacao-senha-usuario').innerText = usuarioLogado.senha || '';
@@ -153,4 +127,9 @@ function atualizarAvatarInicial(usuarioLogado) {
       avatarDiv.textContent = primeiraLetra;
     }
   }
+}
+
+function logout() {
+  localStorage.removeItem('usuarioLogado');
+  window.location.href = 'cadastro-login.html';
 }

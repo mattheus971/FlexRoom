@@ -22,3 +22,22 @@ function atualizarAvatarInicial(usuarioLogado) {
     }
   }
 }
+
+function verificarCadastroUsuario() {
+  const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+  if (!usuarioLogado) {
+    alert("Você precisa estar logado para anunciar.");
+    window.location.href = "cadastro-login.html";
+    return;
+  }
+
+  if (!usuarioLogado.nascimento || !usuarioLogado.telefone) {
+    alert("Por favor, adicione sua data de nascimento e telefone antes de anunciar.");
+    window.location.href = "informacoes-usuario.html";
+    return;
+  }
+
+  // Tudo certo, redireciona para a página de cadastro do anúncio
+  window.location.href = "cadastrar-anuncio.html";
+}
