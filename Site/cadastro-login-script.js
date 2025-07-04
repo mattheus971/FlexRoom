@@ -49,7 +49,8 @@ function cadastrarUsuario() {
         email,
         senha,
         nascimento: '',
-        telefone: ''
+        telefone: '',
+        anuncios: [{}]
     };
 
     usuarios.push(usuario);

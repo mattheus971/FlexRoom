@@ -88,19 +88,20 @@ header .avatar-usuario {
 }
 
 .campo-usuario-cabecalho{
-  min-width: 200px;
   gap: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 .botao-anunciar{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40%;
+  width: 50%;
   border: solid 1px #007455;
   border-radius: 8px;
   padding: 8px;

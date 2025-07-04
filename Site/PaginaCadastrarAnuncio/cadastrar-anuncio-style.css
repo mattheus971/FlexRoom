@@ -6,38 +6,55 @@
 }
 
 body {
+    min-height: 100vh;
     display: flex;
+    /* flex-direction: column; */
+    background-color: #f5f5f5;
 }
 
-.left {
-    background-color: #00c08b;
-    width: 40%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    color: #004c39;
-    font-size: 32px;
-    font-weight: bold;
-}
-
-.logo{
-    position: fixed;
-    font-size: 60px     ;
-}
-
-.right {
-    background-color: #fff;
-    width: 60%;
+/* Cabeçalho */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    background-color: #00cf96;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 32px;
+    z-index: 1000;
 }
 
+header .logo {
+    font-size: 48px;
+    font-weight: bold;
+    color: #007455;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+/* Conteúdo principal */
+.right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px; 
+    padding-bottom: 40px;
+}
+
+/* Formulário */
 form {
     background-color: white;
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
 }
@@ -55,7 +72,7 @@ label {
     font-weight: 500;
 }
 
-input, select {
+input, select, textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -65,7 +82,7 @@ input, select {
     transition: 0.3s;
 }
 
-input:focus, select:focus {
+input:focus, select:focus, textarea:focus {
     border-color: #00c08b;
 }
 
@@ -73,14 +90,38 @@ input[type="file"] {
     padding: 5px;
 }
 
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
 input[type="submit"] {
     background-color: #00c08b;
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
     transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover {
     background-color: #009f75;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .right {
+        padding: 100px 20px 40px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    form {
+        padding: 20px;
+    }
 }

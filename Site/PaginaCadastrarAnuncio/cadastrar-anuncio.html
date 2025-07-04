@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Anúncio</title>
+    <link rel="stylesheet" href="cadastrar-anuncio-style.css">
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.location.href='home.html'">LOGO</div>
+    </header>
+
+    <main class="right">
+        <form>
+            <h1>Cadastro de Anúncio</h1>
+
+            <label for="titulo">Título:</label>
+            <input type="text" id="tituloCadAnuncio" name="titulo" required>
+
+            <label for="tipo">Tipo de imóvel:</label>
+            <select id="tipoCadAnuncio" name="tipo">
+                <option>Casa</option>
+                <option>Apartamento</option>
+                <option>Kitnet</option>
+                <option>Comercial</option>
+            </select>
+
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricaoCadAnuncio" name="descricao" rows="4"></textarea>
+
+            <label for="fotos">Subir Fotos:</label>
+            <input type="file" id="fotosCadAnuncio" name="fotos[]" multiple>
+
+            <label for="quartos">Número de quartos:</label>
+            <select id="quartosCadAnuncio" name="quartos">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4 ou mais</option>
+            </select>
+
+            <label for="banheiros">Número de banheiros:</label>
+            <select id="banheirosCadAnuncio" name="banheiros">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4 ou mais</option>
+            </select>
+
+            <label for="area">Área (m²):</label>
+            <input type="number" id="areaCadAnuncio" name="area">
+
+            <label for="garagem">Inclui garagem?</label>
+            <select id="garagemCadAnuncio" name="garagem">
+                <option>Sim</option>
+                <option>Não</option>
+            </select>
+
+            <label for="iptu">IPTU (R$):</label>
+            <input type="number" step="0.01" id="iptuCadAnuncio" name="iptu">
+
+            <label for="detalhes">Detalhes do imóvel:</label>
+            <select id="detalhesCadAnuncio" name="detalhes">
+                <option>Mobilado</option>
+                <option>Sem mobília</option>
+                <option>Em construção</option>
+            </select>
+
+            <label for="condominio">Detalhe do condomínio:</label>
+            <select id="condominioCadAnuncio" name="condominio">
+                <option>Condomínio fechado</option>
+                <option>Sem condomínio</option>
+            </select>
+
+            <label for="preco">Preço (R$):</label>
+            <input type="number" step="0.01" id="precoCadAnuncio" name="preco" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="enderecoCadAnuncio" name="endereco" required>
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cepCadAnuncio" name="cep" required>
+
+            <input type="submit" value="Cadastrar Anúncio">
+        </form>
+    </main>
+
+    <script src="cadastrar-anuncio-script.js"></script>
+</body>
+</html>

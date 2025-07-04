@@ -39,5 +39,5 @@ function verificarCadastroUsuario() {
   }
 
   // Tudo certo, redireciona para a página de cadastro do anúncio
-  window.location.href = "cadastrar-anuncio.html";
+  window.location.href = "./PaginaCadastrarAnuncio/cadastrar-anuncio.html";
 }
