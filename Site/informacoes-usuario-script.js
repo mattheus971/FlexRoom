@@ -112,8 +112,6 @@ function salvarMudancas() {
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
   }
 
-  alert("Informações atualizadas com sucesso!");
-
   fecharModal();
 }
 

@@ -123,14 +123,15 @@ header .avatar-usuario {
   display: flex;
   flex-direction: column; /* Exibe um anúncio por linha */
   padding: 20px;
+  gap: 24px;
 }
 
 /* Estilo do anúncio */
 .anuncio {
   background-color: #fff; /* Fundo branco para cada anúncio */
-  border: 1px solid #ddd; /* Borda suave para cada anúncio */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-bottom: 1px solid rgb(175, 175, 175); /* Borda suave para cada anúncio */
+  
+  
   padding: 20px; /* Espaçamento interno */
   display: flex;
   flex-direction: row; /* Coloca a imagem e as informações lado a lado */
@@ -139,12 +140,14 @@ header .avatar-usuario {
   align-items: center; /* Alinha verticalmente os itens */
   width: 70%;
   height: 256px;
+  cursor: pointer;
 }
 
 /* Efeito de hover para o anúncio */
 .anuncio:hover {
   transform: translateY(-5px); /* Levanta o anúncio levemente */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Aumenta a sombra */
+  background-color: whitesmoke;
 }
 
 .imagem-anuncio {

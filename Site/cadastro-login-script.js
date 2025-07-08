@@ -3,8 +3,10 @@ function inicializar() {
     esconderTudo()
     mostrarLogin()
 }
-inicializar()
 
+window.onload = function() {
+    inicializar();
+};
 
 function esconderTudo() {
     document.getElementById('formulario-cadastro').style.display = "none"
@@ -50,7 +52,7 @@ function cadastrarUsuario() {
         senha,
         nascimento: '',
         telefone: '',
-        anuncios: [{}]
+        anuncios: []
     };
 
     usuarios.push(usuario);

@@ -1,18 +1,3 @@
-window.onload = function() {
-    // Recupera o usuário logado do localStorage
-    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
-
-    if (!usuarioLogado) {
-        // Se não encontrar usuário logado, redireciona para login
-        window.location.href = "cadastro-login.html";
-        return;
-    }
-
-    // Atualiza o avatar do usuário logado
-    atualizarAvatarInicial(usuarioLogado);
-
-}
-
 // Função para atualizar o avatar do usuário
 function atualizarAvatarInicial(usuarioLogado) {
     if (usuarioLogado && usuarioLogado.nome) {
@@ -74,9 +59,9 @@ function exibirAnuncios() {
   </div>
   <div class="informacoes-anuncio">
     <h2>${anuncio.titulo}</h2>
-    <p>${anuncio.descricao}</p>
-    <p>Preço: R$ ${anuncio.preco}</p>
-    <button onclick="verAnuncio(${anuncio.id})">Ver mais</button>
+    <h2>Preço: R$ ${anuncio.preco}</h2>
+    <p>${anuncio.endereco}</p>
+
   </div>
 `;
 
@@ -91,14 +76,15 @@ function verAnuncio(id) {
 }
 
 // Chama a função para exibir os anúncios
-window.onload = function() {
-  const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+window.onload = function () {
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 
-  if (!usuarioLogado) {
-      window.location.href = "cadastro-login.html";
-      return;
-  }
+    if (!usuarioLogado) {
+        window.location.href = "cadastro-login.html";
+        return;
+    }
 
-  atualizarAvatarInicial(usuarioLogado);
-  exibirAnuncios();  // Exibe os anúncios de todos os usuários
+    atualizarAvatarInicial(usuarioLogado);
+    exibirAnuncios();  // Exibe os anúncios de todos os usuários
 };
+

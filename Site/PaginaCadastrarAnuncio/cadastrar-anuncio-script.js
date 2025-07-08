@@ -61,4 +61,5 @@ form.addEventListener('submit', function(event) {
 
   alert('Anúncio cadastrado com sucesso!');
   form.reset();
+  window.location.href = '../home.html';
 });
