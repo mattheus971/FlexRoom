@@ -69,12 +69,17 @@ function exibirAnuncios() {
       const anuncioElement = document.createElement('div');
       anuncioElement.classList.add('anuncio');
       anuncioElement.innerHTML = `
-          <div>Imagem anuncio</div>
-          <h2>${anuncio.titulo}</h2>
-          <p>${anuncio.descricao}</p>
-          <p>Preço: R$ ${anuncio.preco}</p>
-          <button onclick="verAnuncio(${anuncio.id})">Ver mais</button>
-      `;
+  <div class="imagem-anuncio">
+    <img src="${anuncio.imagemUrl}" alt="${anuncio.titulo}" />
+  </div>
+  <div class="informacoes-anuncio">
+    <h2>${anuncio.titulo}</h2>
+    <p>${anuncio.descricao}</p>
+    <p>Preço: R$ ${anuncio.preco}</p>
+    <button onclick="verAnuncio(${anuncio.id})">Ver mais</button>
+  </div>
+`;
+
       container.appendChild(anuncioElement);
   });
 }

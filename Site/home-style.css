@@ -122,7 +122,6 @@ header .avatar-usuario {
 .container-anuncios {
   display: flex;
   flex-direction: column; /* Exibe um anúncio por linha */
-  gap: 20px; /* Espaçamento entre os anúncios */
   padding: 20px;
 }
 
@@ -134,9 +133,12 @@ header .avatar-usuario {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   padding: 20px; /* Espaçamento interno */
   display: flex;
-  flex-direction: column; /* Coloca os elementos em coluna */
-  gap: 15px; /* Espaçamento entre os elementos dentro do anúncio */
+  flex-direction: row; /* Coloca a imagem e as informações lado a lado */
+  gap: 20px; /* Espaçamento entre a imagem e as informações */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-items: center; /* Alinha verticalmente os itens */
+  width: 70%;
+  height: 256px;
 }
 
 /* Efeito de hover para o anúncio */
@@ -145,12 +147,34 @@ header .avatar-usuario {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Aumenta a sombra */
 }
 
+.imagem-anuncio {
+  width: 300px; /* Limita a largura da imagem */
+  height: 220px; /* Limita a altura da imagem */
+  object-fit: cover; /* Cobre o espaço sem distorcer */
+  border-radius: 8px; /* Bordas arredondadas na imagem */
+  border: solid gray 1px;
+}
+
+/* Container da imagem */
+.imagem-anuncio img {
+  width: 200px; /* Limita a largura da imagem */
+  height: 200px; /* Limita a altura da imagem */
+  object-fit: cover; /* Cobre o espaço sem distorcer */
+  border-radius: 8px; /* Bordas arredondadas na imagem */
+  border: solid gray 1px;
+}
+
+/* Estilo das informações do anúncio */
+.informacoes-anuncio {
+  display: flex;
+  flex-direction: column; /* Exibe as informações em coluna */
+  gap: 10px; /* Espaçamento entre as informações */
+  max-width: 500px; /* Limita a largura das informações */
+}
+
 /* Título do anúncio */
 .anuncio h2 {
   font-size: 1.5rem;
-  width: 700px;
-  height: 128px;
-  font-weight: bold;
   color: #333; /* Cor escura para o título */
   margin: 0;
 }
