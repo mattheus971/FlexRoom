@@ -111,13 +111,79 @@ header .avatar-usuario {
 
 }
 
-.container-conteudo {
+.container-anuncios {
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Estilo geral do container de anúncios */
+.container-anuncios {
+  display: flex;
+  flex-direction: column; /* Exibe um anúncio por linha */
+  gap: 20px; /* Espaçamento entre os anúncios */
+  padding: 20px;
+}
 
+/* Estilo do anúncio */
+.anuncio {
+  background-color: #fff; /* Fundo branco para cada anúncio */
+  border: 1px solid #ddd; /* Borda suave para cada anúncio */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 20px; /* Espaçamento interno */
+  display: flex;
+  flex-direction: column; /* Coloca os elementos em coluna */
+  gap: 15px; /* Espaçamento entre os elementos dentro do anúncio */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover para o anúncio */
+.anuncio:hover {
+  transform: translateY(-5px); /* Levanta o anúncio levemente */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Aumenta a sombra */
+}
+
+/* Título do anúncio */
+.anuncio h2 {
+  font-size: 1.5rem;
+  width: 700px;
+  height: 128px;
+  font-weight: bold;
+  color: #333; /* Cor escura para o título */
+  margin: 0;
+}
+
+/* Descrição do anúncio */
+.anuncio p {
+  font-size: 1rem;
+  color: #555; /* Cor suave para a descrição */
+  margin: 0;
+}
+
+/* Preço do anúncio */
+.anuncio p:last-child {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2d9cdb; /* Cor azul para o preço */
+}
+
+/* Botão de "Ver mais" */
+.anuncio button {
+  background-color: #2d9cdb; /* Cor de fundo azul */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover no botão */
+.anuncio button:hover {
+  background-color: #1a7ab9; /* Cor mais escura ao passar o mouse */
+}
 
 

@@ -6,7 +6,6 @@ form.addEventListener('submit', function(event) {
   const titulo = document.getElementById('tituloCadAnuncio').value.trim();
   const tipoImovel = document.getElementById('tipoCadAnuncio').value;
   const descricao = document.getElementById('descricaoCadAnuncio').value.trim();
-  const fotos = document.getElementById('fotosCadAnuncio').files; // futuro tratamento
   const quartos = document.getElementById('quartosCadAnuncio').value;
   const banheiros = document.getElementById('banheirosCadAnuncio').value;
   const area = Number(document.getElementById('areaCadAnuncio').value);
