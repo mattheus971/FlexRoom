@@ -158,7 +158,7 @@ header .avatar-usuario {
 /* Container da imagem */
 .imagem-anuncio img {
   width: 200px; /* Limita a largura da imagem */
-  height: 200px; /* Limita a altura da imagem */
+  height: 100%; /* Limita a altura da imagem */
   object-fit: cover; /* Cobre o espaço sem distorcer */
   border-radius: 8px; /* Bordas arredondadas na imagem */
   border: solid gray 1px;
@@ -166,10 +166,11 @@ header .avatar-usuario {
 
 /* Estilo das informações do anúncio */
 .informacoes-anuncio {
-  display: flex;
-  flex-direction: column; /* Exibe as informações em coluna */
-  gap: 10px; /* Espaçamento entre as informações */
-  max-width: 500px; /* Limita a largura das informações */
+ display: flex;
+ flex-direction: column;
+ border: solid 1px black;
+ height: 100%;
+ gap: 16px;
 }
 
 /* Título do anúncio */
