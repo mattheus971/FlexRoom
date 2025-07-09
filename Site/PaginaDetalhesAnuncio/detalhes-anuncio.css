@@ -14,11 +14,12 @@ body {
   margin-bottom: 48px;
   }
   
-  .container {
+  .container-conteudo {
     background: white;
     padding: 32px;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.233) 0px 10px 30px;
+    margin: 32px;
   }
   
   .image-box {

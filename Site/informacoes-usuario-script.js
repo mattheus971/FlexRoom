@@ -131,3 +131,21 @@ function logout() {
   localStorage.removeItem('usuarioLogado');
   window.location.href = 'cadastro-login.html';
 }
+
+function verificarCadastroUsuario() {
+  const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+  if (!usuarioLogado) {
+      alert("Você precisa estar logado para anunciar.");
+      window.location.href = "cadastro-login.html";
+      return;
+  }
+
+  if (!usuarioLogado.nascimento || !usuarioLogado.telefone) {
+      alert("Por favor, adicione sua data de nascimento e telefone antes de anunciar.");
+      return;
+  }
+
+  // Tudo certo, redireciona para a página de cadastro do anúncio
+  window.location.href = "./PaginaCadastrarAnuncio/cadastrar-anuncio.html";
+}
