@@ -100,15 +100,25 @@ function salvarMudancas() {
   let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 
   usuarioLogado[currentField] = newValue;
+  console.log(usuarioLogado);
+  
 
   localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
 
   let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  console.log(usuarios);
+  
 
   const index = usuarios.findIndex(u => u.email === usuarioLogado.email);
+  console.log(index);
+  console.log(usuarios[index]);
+  
+  
 
   if (index !== -1) {
-    usuarios[index] = usuarioLogado; 
+    usuarios[index] = usuarioLogado;
+    console.log(usuarios);
+    
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
   }
 

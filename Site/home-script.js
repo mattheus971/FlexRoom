@@ -33,41 +33,54 @@ function verificarCadastroUsuario() {
 
 // Função para exibir os anúncios na home de todos os usuários
 function exibirAnuncios() {
-  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; // Recupera todos os usuários
-  const container = document.querySelector('.container-anuncios');
-
-  let anuncios = [];
-  usuarios.forEach(usuario => {
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; // Recupera todos os usuários
+    const container = document.querySelector('.container-anuncios');
+  
+    let anuncios = [];
+    usuarios.forEach(usuario => {
       if (usuario.anuncios) {
-          anuncios = anuncios.concat(usuario.anuncios); // Adiciona os anúncios de cada usuário
+        anuncios = anuncios.concat(usuario.anuncios); // Adiciona os anúncios de cada usuário
       }
-  });
-
-  // Verifica se há anúncios
-  if (anuncios.length === 0) {
+    });
+  
+    // Verifica se há anúncios
+    if (anuncios.length === 0) {
       container.innerHTML = '<p>Nenhum anúncio disponível.</p>';
       return;
-  }
-
-  // Adiciona os anúncios à página
-  anuncios.forEach(anuncio => {
+    }
+  
+    // Adiciona os anúncios à página
+    anuncios.forEach(anuncio => {
       const anuncioElement = document.createElement('div');
       anuncioElement.classList.add('anuncio');
       anuncioElement.innerHTML = `
-  <div class="imagem-anuncio">
-    <img src="${anuncio.imagemUrl}" alt="${anuncio.titulo}" />
-  </div>
-  <div class="informacoes-anuncio">
-    <h3>${anuncio.titulo}</h3>
-    <h3>R$ ${anuncio.preco}</h3>
-    <p>${anuncio.endereco}</p>
-
-  </div>
-`;
-
+        <div class="imagem-anuncio">
+          <img src="${anuncio.imagemUrl}" alt="${anuncio.titulo}" />
+        </div>
+        <div class="informacoes-anuncio">
+          <h3>${anuncio.titulo}</h3>
+          <h3>R$ ${anuncio.preco}</h3>
+          <p>${anuncio.endereco}</p>
+        </div>
+      `;
+  
+      // Encontra o usuário que postou o anúncio
+      const usuarioAnunciante = usuarios.find(usuario => usuario.anuncios && usuario.anuncios.includes(anuncio));
+  
+      // Adiciona evento de clique para redirecionar para a página de detalhes
+      anuncioElement.addEventListener('click', () => {
+        // Salva os dados do anúncio e do usuário no localStorage
+        localStorage.setItem('anuncioSelecionado', JSON.stringify(anuncio));
+        localStorage.setItem('usuarioAnunciante', JSON.stringify(usuarioAnunciante));
+  
+        // Redireciona para a página de detalhes
+        window.location.href = '../PaginaDetalhesAnuncio/detalhes-anuncio.html';
+      });
+  
       container.appendChild(anuncioElement);
-  });
-}
+    });
+  }
+  
 
 // Função para exibir detalhes do anúncio
 function verAnuncio(id) {
