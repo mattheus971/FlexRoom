@@ -59,7 +59,7 @@ function exibirAnuncios() {
   </div>
   <div class="informacoes-anuncio">
     <h2>${anuncio.titulo}</h2>
-    <h2>Preço: R$ ${anuncio.preco}</h2>
+    <h2>R$ ${anuncio.preco}</h2>
     <p>${anuncio.endereco}</p>
 
   </div>

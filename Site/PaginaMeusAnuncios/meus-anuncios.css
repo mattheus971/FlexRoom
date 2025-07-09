@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  height: 64px;
+  width: 100%;
+  background-color: #00cf96;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 48px;
+  font-weight: bold;
+  color: #007455;
+  cursor: pointer;
+}
+
+.container-anuncios{
+  margin: 64px;
+}
+
+/* Estilo geral do container de anúncios */
+.anuncio {
+  background-color: #fff; /* Fundo branco para cada anúncio */
+  border-bottom: 1px solid rgb(175, 175, 175); /* Borda suave para cada anúncio */
+  
+  padding: 20px; /* Espaçamento interno */
+  display: flex;
+  align-items: center; /* Alinha verticalmente os itens */
+  gap: 20px; /* Espaçamento entre a imagem e as informações */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 700px;
+  height: 150px;
+  cursor: pointer;
+  position: relative; /* Para posicionar o ícone de lixeira */
+}
+
+/* Efeito de hover para o anúncio */
+.anuncio:hover {
+  background-color: whitesmoke;
+}
+
+.imagem-anuncio {
+  width: 200px; /* Limita a largura da imagem */
+  height: 100%; /* Limita a altura da imagem */
+  object-fit: cover; /* Cobre o espaço sem distorcer */
+  border-radius: 8px; /* Bordas arredondadas na imagem */
+  background-color: rgb(157, 157, 157);
+}
+
+/* Container da imagem */
+.imagem-anuncio img {
+  width: 200px; /* Limita a largura da imagem */
+  height: 100%; /* Limita a altura da imagem */
+  object-fit: cover; /* Cobre o espaço sem distorcer */
+  border-radius: 8px; /* Bordas arredondadas na imagem */
+  border: solid gray 1px;
+}
+
+/* Estilo das informações do anúncio */
+.informacoes-anuncio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Alinha verticalmente o título e preço */
+  height: 100%;
+  gap: 8px; /* Espaçamento entre título e preço */
+}
+
+/* Título do anúncio */
+.anuncio h2 {
+  font-size: 1.5rem;
+  color: #333; /* Cor escura para o título */
+  margin: 0;
+}
+
+/* Preço do anúncio */
+.anuncio h2:last-child {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2d9cdb; /* Cor azul para o preço */
+}
+
+/* Ícone de lixeira */
+.icone-excluir {
+  position: absolute; /* Posiciona o ícone de lixeira à direita do card */
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%); /* Alinha verticalmente o ícone */
+}
+
+/* Estilo do botão de lixeira */
+.icone-excluir button {
+  background-color: transparent; /* Fundo transparente */
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.icone-excluir button i {
+  font-size: 1.5rem;
+  color: #d9534f; /* Cor vermelha para o ícone de lixeira */
+  transition: color 0.3s ease;
+}
+
+/* Efeito de hover no ícone de lixeira */
+.icone-excluir button:hover i {
+  color: #c9302c; /* Cor mais escura ao passar o mouse */
+}
