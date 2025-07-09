@@ -99,8 +99,8 @@ window.onload = function () {
                 <img src="${anuncio.imagemUrl || 'default-image.jpg'}" alt="${anuncio.titulo}" />
             </div>
             <div class="informacoes-anuncio">
-                <h2>${anuncio.titulo}</h2>
-                <h2>R$ ${anuncio.preco}</h2>
+                <h3>${anuncio.titulo}</h3>
+                <h3>R$ ${anuncio.preco}</h3>
             </div>
             <div class="icone-excluir">
                 <button onclick="deletarAnuncio(${anuncio.id})">

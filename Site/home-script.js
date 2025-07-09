@@ -58,8 +58,8 @@ function exibirAnuncios() {
     <img src="${anuncio.imagemUrl}" alt="${anuncio.titulo}" />
   </div>
   <div class="informacoes-anuncio">
-    <h2>${anuncio.titulo}</h2>
-    <h2>R$ ${anuncio.preco}</h2>
+    <h3>${anuncio.titulo}</h3>
+    <h3>R$ ${anuncio.preco}</h3>
     <p>${anuncio.endereco}</p>
 
   </div>
@@ -71,7 +71,7 @@ function exibirAnuncios() {
 
 // Função para exibir detalhes do anúncio
 function verAnuncio(id) {
-  // Aqui você pode redirecionar para uma página de detalhes ou abrir um modal com mais informações.
+  // Aqui redireciona para página de detalhes.
   console.log(`Ver detalhes do anúncio com ID: ${id}`);
 }
 

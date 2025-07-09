@@ -129,8 +129,9 @@ header .avatar-usuario {
 /* Estilo do anúncio */
 .anuncio {
   background-color: #fff; /* Fundo branco para cada anúncio */
-  border: 1px solid rgb(175, 175, 175); /* Borda suave para cada anúncio */
-  border-radius: 8px;
+  border-top: 1px solid rgb(175, 175, 175); /* Borda suave para cada anúncio */
+  border-bottom: 1px solid rgb(175, 175, 175);
+  /* border-radius: 8px; */
   
   padding: 20px; /* Espaçamento interno */
   display: flex;
@@ -145,9 +146,10 @@ header .avatar-usuario {
 
 /* Efeito de hover para o anúncio */
 .anuncio:hover {
-  transform: translateY(-5px); /* Levanta o anúncio levemente */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Aumenta a sombra */
-  border: #007455 solid 1px;
+  transform: translateY(-8px); /* Levanta o anúncio levemente */
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); Aumenta a sombra */
+  border-top: #007455 solid 1px; /* Borda suave para cada anúncio */
+  border-bottom: #007455 solid 1px;
 }
 
 .imagem-anuncio {
