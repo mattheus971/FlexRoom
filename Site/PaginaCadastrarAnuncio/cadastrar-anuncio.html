@@ -29,13 +29,7 @@
             <textarea id="descricaoCadAnuncio" name="descricao" rows="4"></textarea>
 
             <label for="quartos">Número de quartos:</label>
-            <select id="quartosCadAnuncio" name="quartos">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4 ou mais</option>
-            </select>
+            <input type="number" id="quartosCadAnuncio" name="quartos">
 
             <label for="banheiros">Número de banheiros:</label>
             <select id="banheirosCadAnuncio" name="banheiros">
@@ -49,7 +43,7 @@
             <input type="number" id="areaCadAnuncio" name="area">
 
             <label for="garagem">Inclui garagem?</label>
-            <input type="text" id="garagemCadAnuncio" name="garagem">
+            <input type="number" id="garagemCadAnuncio" name="garagem">
 
             <label for="iptu">IPTU (R$):</label>
             <input type="number" step="0.01" id="iptuCadAnuncio" name="iptu">
@@ -58,7 +52,6 @@
             <select id="detalhesCadAnuncio" name="detalhes">
                 <option>Mobilado</option>
                 <option>Sem mobília</option>
-                <option>Em construção</option>
             </select>
 
             <label for="condominio">Detalhe do condomínio:</label>
