@@ -74,7 +74,7 @@ function exibirAnuncios() {
         localStorage.setItem('usuarioAnunciante', JSON.stringify(usuarioAnunciante));
   
         // Redireciona para a página de detalhes
-        window.location.href = '../PaginaDetalhesAnuncio/detalhes-anuncio.html';
+        window.location.href = './PaginaDetalhesAnuncio/detalhes-anuncio.html';
       });
   
       container.appendChild(anuncioElement);

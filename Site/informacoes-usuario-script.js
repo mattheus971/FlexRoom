@@ -57,6 +57,7 @@ window.onload = function() {
     return;
   }
 
+  // Atualiza a saudação e as informações do usuário
   atualizarAvatarInicial(usuarioLogado);
 
   document.getElementById('saudacao-usuario').innerText = "Olá " + (usuarioLogado.nome || '');
@@ -72,19 +73,19 @@ function salvarMudancas() {
 
   switch(currentField) {
     case 'nome':
-      newValue = document.getElementById('editInputNome').value
+      newValue = document.getElementById('editInputNome').value;
       break;
     case 'email':
-      newValue = document.getElementById('editInputEmail').value
+      newValue = document.getElementById('editInputEmail').value;
       break;
     case 'senha':
-      newValue = document.getElementById('editInputSenha').value
+      newValue = document.getElementById('editInputSenha').value;
       break;
     case 'nascimento':
-      newValue = document.getElementById('editInputNascimento').value
+      newValue = document.getElementById('editInputNascimento').value;
       break;
     case 'telefone':
-      newValue = document.getElementById('editInputTelefone').value
+      newValue = document.getElementById('editInputTelefone').value;
       break;
   }
 
@@ -93,32 +94,23 @@ function salvarMudancas() {
     return;
   }
 
+  // Atualizando o campo na página
   document.getElementById('informacao-' + currentField + '-usuario').innerText = newValue;
-
   document.getElementById('campo-' + currentField).querySelector('h3').textContent = newValue;
 
   let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 
   usuarioLogado[currentField] = newValue;
-  console.log(usuarioLogado);
   
-
+  // Atualiza o usuário logado no localStorage
   localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
 
+  // Atualiza a lista de usuários no localStorage
   let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-  console.log(usuarios);
-  
-
-  const index = usuarios.findIndex(u => u.email === usuarioLogado.email);
-  console.log(index);
-  console.log(usuarios[index]);
-  
-  
+  const index = usuarios.findIndex(u => u.id === usuarioLogado.id); // Aqui mudou de email para id
 
   if (index !== -1) {
     usuarios[index] = usuarioLogado;
-    console.log(usuarios);
-    
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
   }
 

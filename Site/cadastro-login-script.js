@@ -47,6 +47,7 @@ function cadastrarUsuario() {
     }
 
     const usuario = {
+        id: Date.now(),  // Gera um ID único baseado no timestamp
         nome,
         email,
         senha,
@@ -65,6 +66,7 @@ function cadastrarUsuario() {
     document.getElementById('inputEmailCadastro').value = "";
     document.getElementById('inputSenhaCadastro').value = "";
 }
+
 
 function logar() {
     const emailLogin = document.getElementById('inputEmailLogin').value;
