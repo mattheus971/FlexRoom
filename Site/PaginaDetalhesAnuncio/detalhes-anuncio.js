@@ -6,10 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (anuncio && usuarioAnunciante) {
     // Preenche os campos da página com os dados do anúncio
     document.getElementById('title').textContent = anuncio.titulo;
-    document.getElementById('house-image').src = anuncio.imagemUrl;
     document.getElementById('price').textContent = `R$ ${anuncio.preco}`;
     document.getElementById('description').textContent = anuncio.descricao || 'Sem descrição disponível';
-    document.getElementById('area').textContent = anuncio.area || 'Não especificado';
+    document.getElementById('area').textContent = anuncio.area +"m²" || 'Não especificado';
     document.getElementById('quartos').textContent = anuncio.quartos || 'Não especificado';
     document.getElementById('banheiros').textContent = anuncio.banheiros || 'Não especificado';
     document.getElementById('garagem').textContent = anuncio.garagem || 'Não especificado';
@@ -26,3 +25,44 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.container-conteudo').innerHTML = '<p>Anúncio não encontrado.</p>';
   }
 });
+
+function atualizarAvatarInicial(usuarioLogado) {
+  if (usuarioLogado && usuarioLogado.nome) {
+    const primeiraLetra = usuarioLogado.nome.trim().charAt(0).toUpperCase();
+    const avatarDiv = document.getElementById('avatar-inicial-usuario');
+
+    if (avatarDiv) {
+      avatarDiv.textContent = primeiraLetra;
+    }
+  }
+}
+
+window.onload = function () {
+  const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+  if (!usuarioLogado) {
+    window.location.href = "cadastro-login.html";
+    return;
+  }
+
+  atualizarAvatarInicial(usuarioLogado);
+};
+
+function verificarCadastroUsuario() {
+  const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+  if (!usuarioLogado) {
+    alert("Você precisa estar logado para anunciar.");
+    window.location.href = "cadastro-login.html";
+    return;
+  }
+
+  if (!usuarioLogado.nascimento || !usuarioLogado.telefone) {
+    alert("Por favor, adicione sua data de nascimento e telefone antes de anunciar.");
+    window.location.href = "informacoes-usuario.html";
+    return;
+  }
+
+  // Tudo certo, redireciona para a página de cadastro do anúncio
+  window.location.href = "/PaginaCadastrarAnuncio/cadastrar-anuncio.html";
+}

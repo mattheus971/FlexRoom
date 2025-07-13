@@ -11,37 +11,99 @@
 </head>
 
 <body>
+
   <header>
     <div class="logo" onclick="window.location.href='../home.html'">LOGO</div>
-  </header>
-  <div class="container-conteudo">
-    <div class="image-box">
-      <img id="house-image" src="" alt="Imagem da casa para alugar" />
+    <div class="campo-usuario-cabecalho">
+      <button class="botao-anunciar" onclick="verificarCadastroUsuario()">Anunciar</button>
+      <div class="avatar-usuario" id="avatar-inicial-usuario"
+        onclick="window.location.href='../informacoes-usuario.html'"></div>
     </div>
-    <div class="details">
-      <h1 id="title"></h1>
-      <div class="price" id="price"></div>
-      <p class="description" id="description"></p>
+
+  </header>
+
+  <div class="anuncio-detalhado">
+    <div class="container-imagem-dadosAnunciante">
+      <div class="imagem-anuncio"></div>
+      <div class="dados-anunciante">
+        <h3>Contato do Anunciante</h3>
+        <div><strong></strong> <span id="nome-anunciante"></span></div>
+        <div><strong></strong> <span id="email-anunciante"></span></div>
+        <div><strong></strong> <span id="telefone-anunciante"></span></div>
+      </div>
+    </div>
+
+    <div class="detalhes">
+      <h2 id="title"></h2>
+      <div class="price" id="price">R$ 900,00</div>
+      <p class="description" id="description">Kitnet recém-reformada, ideal para estudantes e jovens profissionais.
+        Possui cozinha americana, banheiro com box de vidro e espaço integrado de quarto/sala. Ambiente seguro e
+        silencioso.</p>
 
       <div class="info-grid">
-        <div><i class="fas fa-ruler-combined"></i> <span id="area"></span> m²</div>
-        <div><i class="fas fa-bed"></i> <span id="quartos"></span></div>
-        <div><i class="fas fa-shower"></i> <span id="banheiros"></span></div>
-        <div><i class="fas fa-car"></i> <span id="garagem"></span></div>
-        <div><strong>Mobiliado:</strong> <span id="mobiliado"></span></div>
-        <div><strong>CEP:</strong> <span id="cep"></span></div>
-        <div><i class="fas fa-map-marker-alt"></i> <span id="endereco"></span></div>
-      </div>
-
-
-      <h3>Contato do Anunciante</h3>
-      <div><strong>Nome:</strong> <span id="nome-anunciante"></span></div>
-      <div><strong>Email:</strong> <span id="email-anunciante"></span></div>
-      <div><strong>Telefone:</strong> <span id="telefone-anunciante"></span></div>
+  <div class="info-item">
+    <i class="fas fa-ruler-combined"></i>
+    <div>
+      <span class="label">ÁREA</span>
+      <strong id="area"></strong> 
     </div>
   </div>
 
-  <script src="detalhes-anuncio.js"></script>
+  <div class="info-item">
+    <i class="fas fa-bed"></i>
+    <div>
+      <span class="label">QUARTOS</span>
+      <strong id="quartos"></strong>
+    </div>
+  </div>
+
+  <div class="info-item">
+    <i class="fas fa-shower"></i>
+    <div>
+      <span class="label">BANHEIROS</span>
+      <strong id="banheiros"></strong>
+    </div>
+  </div>
+
+  <div class="info-item">
+    <i class="fas fa-car"></i>
+    <div>
+      <span class="label">GARAGENS</span>
+      <strong id="garagem"></strong>
+    </div>
+  </div>
+
+  <div class="info-item">
+    <i class="fas fa-chair"></i>
+    <div>
+      <span class="label">MOBILIADO</span>
+      <strong id="mobiliado"></strong>
+    </div>
+  </div>
+
+  <div class="info-item">
+    <span class="label">CEP</span>
+    <strong id="cep"></strong>
+  </div>
+
+  <div class="info-item">
+    <i class="fas fa-map-marker-alt"></i>
+    <div>
+      <span class="label">ENDEREÇO</span>
+      <strong id="endereco"></strong>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+
+
+
+
+
+    <script src="./detalhes-anuncio.js"></script>
 </body>
 
 </html>

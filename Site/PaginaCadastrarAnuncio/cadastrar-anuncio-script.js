@@ -63,3 +63,28 @@ form.addEventListener('submit', function(event) {
   form.reset();
   window.location.href = '../home.html';
 });
+
+  // Função para mostrar a inicial do nome do usuário no avatar
+  function atualizarAvatarInicial(usuarioLogado) {
+    if (usuarioLogado && usuarioLogado.nome) {
+      const primeiraLetra = usuarioLogado.nome.trim().charAt(0).toUpperCase();
+      const avatarDiv = document.getElementById('avatar-inicial-usuario');
+      
+      if (avatarDiv) {
+        avatarDiv.textContent = primeiraLetra;
+      }
+    }
+  }
+
+  // Quando a página carregar
+  window.onload = function () {
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+    
+    if (!usuarioLogado) {
+      alert("Você precisa estar logado para acessar esta página.");
+      window.location.href = "../cadastro-login.html";
+      return;
+    }
+
+    atualizarAvatarInicial(usuarioLogado);
+  }

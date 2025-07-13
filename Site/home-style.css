@@ -7,6 +7,7 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   padding: 0px;
+  background-color: whitesmoke;
 }
 
 header {
@@ -41,7 +42,7 @@ header .input-pesquisa {
   width: 100%;
   padding: 8px;
   background-color: whitesmoke;
-  border: solid #007455 1px;
+  border: solid #008662 1px;
   border-right: none;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -56,7 +57,7 @@ header .input-pesquisa::placeholder{
 }
 
 .botao-pesquisar{
-  background-color: #00926a;
+  background-color: #008662;
   color: whitesmoke;
   height: 32px;
   width: 64px;
@@ -70,7 +71,7 @@ header .input-pesquisa::placeholder{
 }
 
 .botao-pesquisar:hover{
-  background-color: #00a87b;
+  background-color: #007c5b;
 }
 
 header .avatar-usuario {
@@ -81,7 +82,7 @@ header .avatar-usuario {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: solid #00926a 2px;
+  border: solid #008662 2px;
   font-size: 24px;
   font-weight: medium;
   cursor: pointer;
@@ -106,9 +107,13 @@ header .avatar-usuario {
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
-  background-color: #00926a;
+  background-color: #008662;
   color: white;
 
+}
+
+.botao-anunciar:hover{
+  background-color: #007c5b;
 }
 
 .container-anuncios {
@@ -129,9 +134,7 @@ header .avatar-usuario {
 /* Estilo do anúncio */
 .anuncio {
   background-color: #fff; /* Fundo branco para cada anúncio */
-  border-top: 1px solid rgb(175, 175, 175); /* Borda suave para cada anúncio */
-  border-bottom: 1px solid rgb(175, 175, 175);
-  /* border-radius: 8px; */
+  border-radius: 8px;
   
   padding: 20px; /* Espaçamento interno */
   display: flex;
@@ -142,14 +145,15 @@ header .avatar-usuario {
   width: 70%;
   height: 220px;
   cursor: pointer;
+  border: solid 1px gray;
+  transition: 0.s ease;
 }
 
 /* Efeito de hover para o anúncio */
 .anuncio:hover {
   transform: translateY(-8px); /* Levanta o anúncio levemente */
-  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); Aumenta a sombra */
-  border-top: #007455 solid 1px; /* Borda suave para cada anúncio */
-  border-bottom: #007455 solid 1px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border: solid 1px #00926a;
 }
 
 .imagem-anuncio {

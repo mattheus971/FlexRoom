@@ -14,17 +14,10 @@ body{
 header{
   height: 64px;
   width: 100%;
-  background-color: #00cf96;
+  background-color: #007455; 
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-header .logo {
-  font-size: 48px;
-  font-weight: bold;
-  color: #007455;
-  cursor: pointer;
 }
 
 .container-conteudo{
@@ -60,7 +53,7 @@ header .logo {
 }
 
 .container-anuncios{
-  border: solid #007455 1px;
+  border: solid rgb(175, 175, 175) 1px;
   border-radius: 8px;
   min-height: 74px;
   width: 800px;
@@ -85,7 +78,7 @@ header .logo {
 }
 
 .container-informacoes{
-  border: solid #007455 1px;
+  border: solid rgb(175, 175, 175) 1px;
   border-radius: 8px;
   min-height: 100px;
   width: 800px;
@@ -141,12 +134,12 @@ header .logo {
 
 #botao-sair{
   padding: 8px;
-  width: 128px;
+  width: 10%;
   background-color: grey;
   border: none;
   border-radius: 8px;
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
   transition: 0.5s ease;
 }
@@ -234,4 +227,107 @@ header .logo {
 
 .modal button:hover{
   background-color: #00a87b;
+}
+
+/* ======================================================= */
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #00cf96;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 32px 0px 32px;
+  z-index: 100;
+}
+
+header .logo {
+  font-size: 48px;
+  font-weight: bold;
+  color: #007455; 
+  cursor: pointer;
+}
+
+.campo-pesquisa{
+  display: flex;
+  gap: 0;
+  width: 32%;
+  max-width: 700px;
+}
+
+header .input-pesquisa {
+  height: 32px;
+  width: 100%;
+  padding: 8px;
+  background-color: whitesmoke;
+  border: solid #007455 1px;
+  border-right: none;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 12px;
+}
+
+header .input-pesquisa::placeholder{
+  color: grey;
+  font-size: 14px;
+}
+
+.botao-pesquisar{
+  background-color: #00926a;
+  color: whitesmoke;
+  height: 32px;
+  width: 64px;
+  border: solid #007455 1px;
+  border-left: 0;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+}
+
+.botao-pesquisar:hover{
+  background-color: #00a87b;
+}
+
+header .avatar-usuario {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: solid #00926a 2px;
+  font-size: 24px;
+  font-weight: medium;
+  cursor: pointer;
+}
+
+.campo-usuario-cabecalho{
+  gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.botao-anunciar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: solid 1px #007455;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  background-color: #00926a;
+  color: white;
+
 }

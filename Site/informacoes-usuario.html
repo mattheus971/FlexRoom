@@ -11,21 +11,22 @@
 
 <body>
 
-  <header>
+  <!-- <header>
     <div class="logo" onclick="window.location.href='home.html'">LOGO</div>
-  </header>
+    
+  </header> -->
+  <header>
+      <div class="logo" onclick="window.location.href='home.html'">LOGO</div>
+      <div class="campo-usuario-cabecalho">
+        <button class="botao-anunciar" onclick="verificarCadastroUsuario()">Anunciar</button>
+      </div>
+      
+    </header>
+
   <div class="container-conteudo">
     <div class="container-usuario">
       <div class="avatar-usuario" id="avatar-inicial-usuario"></div>
       <h1 id="saudacao-usuario">Olá</h1>
-    </div>
-
-    <div class="container-anuncios" onclick="verificarCadastroUsuario()">
-      <div>
-        <h2 style="font-size: 20px;">Anunciar</h2>
-        <p>Clique para anunciar</p>
-      </div>
-      <i class="fas fa-arrow-right"></i>
     </div>
 
     <div class="container-anuncios" onclick="window.location.href='./PaginaMeusAnuncios/meus-anuncios.html'">
