@@ -55,7 +55,7 @@ function exibirAnuncios() {
     anuncioElement.classList.add('anuncio');
     anuncioElement.innerHTML = `
         <div class="imagem-anuncio">
-          <img src="${anuncio.imagemUrl}" alt="${anuncio.titulo}" />
+          <img src="../assets/imagem-casa-placeholder.png" alt="imagem-placeholder">
         </div>
         <div class="informacoes-anuncio">
           <h3>${anuncio.titulo}</h3>
@@ -155,7 +155,7 @@ function buscarAnuncios() {
     anuncioElement.classList.add('anuncio');
     anuncioElement.innerHTML = `
       <div class="imagem-anuncio">
-        <img src="${anuncio.imagemUrl || 'https://via.placeholder.com/150'}" alt="${anuncio.titulo}" />
+        <img src="../assets/imagem-casa-placeholder.png" alt="imagem-placeholder">
       </div>
       <div class="informacoes-anuncio">
         <h3>${anuncio.titulo}</h3>
