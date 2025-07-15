@@ -116,19 +116,37 @@ header .avatar-usuario {
   background-color: #007c5b;
 }
 
-.container-anuncios {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /* Estilo geral do container de anúncios */
 .container-anuncios {
-  display: flex;
-  flex-direction: column; /* Exibe um anúncio por linha */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(500px, 1fr));
   padding: 64px;
-  gap: 24px;
+  gap: 32px;
+  /* width: 100%; */
+  /* flex-direction: row; */
+  align-items: center;
+  /* flex-wrap: wrap; */
+  /* margin: 0 auto; */
+  /* justify-content: center; */
+
+  /* justify-content: flex-start; */
+}
+
+.anuncio.single-in-row {
+  margin-left: 0;
+}
+
+.anuncio.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Estilo do anúncio */
@@ -136,17 +154,18 @@ header .avatar-usuario {
   background-color: #fff; /* Fundo branco para cada anúncio */
   border-radius: 8px;
   
-  padding: 20px; /* Espaçamento interno */
+  padding: 0px; /* Espaçamento interno */
   display: flex;
-  flex-direction: row; /* Coloca a imagem e as informações lado a lado */
+  flex-direction: column; /* Coloca a imagem e as informações lado a lado */
   gap: 20px; /* Espaçamento entre a imagem e as informações */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   align-items: center; /* Alinha verticalmente os itens */
-  width: 70%;
-  height: 220px;
+  width: 500px;
+  min-height: 400px;
   cursor: pointer;
   border: solid 1px gray;
   transition: 0.s ease;
+  overflow: hidden;
 }
 
 /* Efeito de hover para o anúncio */
@@ -157,27 +176,26 @@ header .avatar-usuario {
 }
 
 .imagem-anuncio {
-  width: 250px; /* Limita a largura da imagem */
-  height: 100%; /* Limita a altura da imagem */
+  width: 100%; /* Limita a largura da imagem */
+  height: 200px; /* Limita a altura da imagem */
   object-fit: cover; /* Cobre o espaço sem distorcer */
-  border-radius: 8px; /* Bordas arredondadas na imagem */
   background-color: rgb(157, 157, 157);
 }
 
 /* Container da imagem */
 .imagem-anuncio img {
-  width: 200px; /* Limita a largura da imagem */
+  width: 100%; /* Limita a largura da imagem */
   height: 100%; /* Limita a altura da imagem */
   object-fit: cover; /* Cobre o espaço sem distorcer */
-  border-radius: 8px; /* Bordas arredondadas na imagem */
 }
 
 /* Estilo das informações do anúncio */
 .informacoes-anuncio {
- display: flex;
- flex-direction: column;
  height: 100%;
+ width: 100%;
  gap: 16px;
+ padding: 20px;
+ max-width: 100%;
 }
 
 /* Título do anúncio */

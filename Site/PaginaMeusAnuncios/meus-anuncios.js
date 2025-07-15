@@ -96,7 +96,7 @@ window.onload = function () {
 
         anuncioElement.innerHTML = `
             <div class="imagem-anuncio">
-                <img src="${anuncio.imagemUrl || 'default-image.jpg'}" alt="${anuncio.titulo}" />
+                <img src="../assets/imagem-casa-placeholder.png" alt="imagem-placeholder">
             </div>
             <div class="informacoes-anuncio">
                 <h3>${anuncio.titulo}</h3>

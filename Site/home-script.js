@@ -108,6 +108,7 @@ window.onload = function () {
     }
   });
 
+  ajustarCardsPorLinha()
 };
 
 
@@ -176,6 +177,39 @@ function buscarAnuncios() {
   });
 }
 
+//   const container = document.getElementById('container-anuncios');
+//   console.log(container.children)
+//   const cards = Array.from(container.children);
+//   console.log(cards)
+//   // Resetar classes
+//   for (const child of container.children) {
+//     console.log(child.tagName);
+//   }
+//   // container.children.forEach(card => {
+//   //   card.classList.remove('single-in-row', 'centered');
+//   // });
 
+//   // Agrupar por linhas (mesmo offsetTop)
+//   const linhas = {};
+//   cards.forEach(card => {
+//     const top = card.offsetTop;
+//     if (!linhas[top]) linhas[top] = [];
+//     linhas[top].push(card);
+//   });
 
+//   Object.values(linhas).forEach(cardsNaLinha => {
+//     if (cardsNaLinha.length === 1) {
+//       cardsNaLinha[0].classList.add('single-in-row');
+//     } else {
+//       cardsNaLinha.forEach(card => card.classList.add('centered'));
+//     }
+//   });
+// }
 
+// ajustarCardsPorLinha();
+// window.addEventListener('resize', ajustarCardsPorLinha);
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   ajustarCardsPorLinha();
+//   window.addEventListener('resize', ajustarCardsPorLinha);
+// });
