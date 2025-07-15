@@ -118,27 +118,13 @@ header .avatar-usuario {
 
 /* Estilo geral do container de anúncios */
 .container-anuncios {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(500px, 1fr));
+  display: flex;                /* Muda para flexbox */
+  flex-wrap: wrap;              /* Permite que os itens que não couberem vão para a próxima linha */
   padding: 64px;
   gap: 32px;
-  /* width: 100%; */
-  /* flex-direction: row; */
+  width: 100%;
   align-items: center;
-  /* flex-wrap: wrap; */
-  /* margin: 0 auto; */
-  /* justify-content: center; */
-
-  /* justify-content: flex-start; */
-}
-
-.anuncio.single-in-row {
-  margin-left: 0;
-}
-
-.anuncio.centered {
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center;
 }
 
 
@@ -152,16 +138,14 @@ header .avatar-usuario {
 /* Estilo do anúncio */
 .anuncio {
   background-color: #fff; /* Fundo branco para cada anúncio */
-  border-radius: 8px;
-  
+  border-radius: 16px;
   padding: 0px; /* Espaçamento interno */
   display: flex;
   flex-direction: column; /* Coloca a imagem e as informações lado a lado */
-  gap: 20px; /* Espaçamento entre a imagem e as informações */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   align-items: center; /* Alinha verticalmente os itens */
   width: 500px;
-  min-height: 400px;
+  min-height: 450px;
   cursor: pointer;
   border: solid 1px gray;
   transition: 0.s ease;
@@ -177,7 +161,7 @@ header .avatar-usuario {
 
 .imagem-anuncio {
   width: 100%; /* Limita a largura da imagem */
-  height: 200px; /* Limita a altura da imagem */
+  height: 250px; /* Limita a altura da imagem */
   object-fit: cover; /* Cobre o espaço sem distorcer */
   background-color: rgb(157, 157, 157);
 }
@@ -193,30 +177,41 @@ header .avatar-usuario {
 .informacoes-anuncio {
  height: 100%;
  width: 100%;
- gap: 16px;
  padding: 20px;
  max-width: 100%;
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
 }
 
+.informacoes-anuncio p {
+  font-size: 14px; /* Diminuir o tamanho da fonte */
+  color: gray; /* Deixar o texto na cor cinza */
+  display: flex; /* Usar flexbox para alinhar o ícone e o texto */
+  align-items: center; /* Alinhar o texto e o ícone no centro */
+}
+
+.informacoes-anuncio i {
+  margin-right: 8px; /* Adicionar um pequeno espaçamento entre o ícone e o texto */
+  color: gray; /* Definir a cor do ícone como cinza */
+}
+
+
 /* Título do anúncio */
-.anuncio h2 {
+.anuncio h3 {
+  font-weight: light;
   font-size: 1.5rem;
   color: #333; /* Cor escura para o título */
   margin: 0;
+  font-weight: 500;
 }
 
-/* Descrição do anúncio */
-.anuncio p {
-  font-size: 1rem;
-  color: #555; /* Cor suave para a descrição */
-  margin: 0;
-}
 
 /* Preço do anúncio */
 .anuncio p:last-child {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #2d9cdb; /* Cor azul para o preço */
+  font-size: 1rem;
+  font-weight: light;
+  color: #505050; /* Cor azul para o preço */
 }
 
 /* Botão de "Ver mais" */

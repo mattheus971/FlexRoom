@@ -36,12 +36,7 @@
             <input type="number" id="quartosCadAnuncio" name="quartos">
 
             <label for="banheiros">Número de banheiros:</label>
-            <select id="banheirosCadAnuncio" name="banheiros">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4 ou mais</option>
-            </select>
+            <input type="number" id="banheirosCadAnuncio" name="banheiros">
 
             <label for="area">Área (m²):</label>
             <input type="number" id="areaCadAnuncio" name="area">
@@ -49,10 +44,7 @@
             <label for="garagem">Inclui garagem?</label>
             <input type="number" id="garagemCadAnuncio" name="garagem">
 
-            <label for="iptu">IPTU (R$):</label>
-            <input type="number" step="0.01" id="iptuCadAnuncio" name="iptu">
-
-            <label for="detalhes">Detalhes do imóvel:</label>
+            <label for="detalhes">Mobília:</label>
             <select id="detalhesCadAnuncio" name="detalhes">
                 <option>Mobilado</option>
                 <option>Sem mobília</option>
@@ -72,6 +64,10 @@
 
             <label for="cep">CEP:</label>
             <input type="text" id="cepCadAnuncio" name="cep" required>
+
+            <label for="fotos">Fotos do imóvel:</label>
+            <input type="file" id="fotosCadAnuncio" name="fotos" accept="image/*" multiple>
+
 
             <input type="submit" value="Cadastrar Anúncio">
         </form>

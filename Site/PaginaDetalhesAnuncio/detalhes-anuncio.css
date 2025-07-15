@@ -254,3 +254,7 @@ header .avatar-usuario {
   object-position: center; /* Centraliza a imagem */
   overflow: hidden;
 }
+
+.info-grid span{
+font-weight: light;
+}

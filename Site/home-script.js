@@ -31,7 +31,58 @@ function verificarCadastroUsuario() {
 }
 
 
-// Função para exibir os anúncios na home de todos os usuários
+// Função para exibir os anúncios na home de todos os usuários SEM FOTO
+// function exibirAnuncios() {
+//   const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; // Recupera todos os usuários
+//   const container = document.querySelector('.container-anuncios');
+
+//   let anuncios = [];
+//   usuarios.forEach(usuario => {
+//     if (usuario.anuncios) {
+//       anuncios = anuncios.concat(usuario.anuncios); // Adiciona os anúncios de cada usuário
+//     }
+//   });
+
+//   // Verifica se há anúncios
+//   if (anuncios.length === 0) {
+//     container.innerHTML = '<p>Nenhum anúncio disponível.</p>';
+//     return;
+//   }
+
+//   // Adiciona os anúncios à página
+//   anuncios.forEach(anuncio => {
+//     const anuncioElement = document.createElement('div');
+//     anuncioElement.classList.add('anuncio');
+//     anuncioElement.innerHTML = `
+//   <div class="imagem-anuncio">
+//     <img src="../assets/Captura de tela 2025-07-15 143226.png" alt="imagem-placeholder">
+//   </div>
+//   <div class="informacoes-anuncio">
+//     <h3>${anuncio.titulo}</h3>
+//     <h3>R$ ${anuncio.preco}</h3>
+//     <p><i class="fas fa-map-marker-alt"></i>${anuncio.endereco}</p>
+//   </div>
+// `;
+
+
+//     // Encontra o usuário que postou o anúncio
+//     const usuarioAnunciante = usuarios.find(usuario => usuario.anuncios && usuario.anuncios.includes(anuncio));
+
+//     // Adiciona evento de clique para redirecionar para a página de detalhes
+//     anuncioElement.addEventListener('click', () => {
+//       // Salva os dados do anúncio e do usuário no localStorage
+//       localStorage.setItem('anuncioSelecionado', JSON.stringify(anuncio));
+//       localStorage.setItem('usuarioAnunciante', JSON.stringify(usuarioAnunciante));
+
+//       // Redireciona para a página de detalhes
+//       window.location.href = './PaginaDetalhesAnuncio/detalhes-anuncio.html';
+//     });
+
+//     container.appendChild(anuncioElement);
+//   });
+// }
+
+// Função para exibir os anúncios na home de todos os usuários COM FOTO
 function exibirAnuncios() {
   const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; // Recupera todos os usuários
   const container = document.querySelector('.container-anuncios');
@@ -53,16 +104,20 @@ function exibirAnuncios() {
   anuncios.forEach(anuncio => {
     const anuncioElement = document.createElement('div');
     anuncioElement.classList.add('anuncio');
+
+    // Pega a primeira foto do anúncio ou uma imagem padrão caso não tenha
+    const imagemAnuncio = anuncio.fotos && anuncio.fotos.length > 0 ? anuncio.fotos[0] : 'imagem-padrao.jpg'; // Defina uma imagem padrão
+
     anuncioElement.innerHTML = `
-        <div class="imagem-anuncio">
-          <img src="../assets/imagem-casa-placeholder.png" alt="imagem-placeholder">
-        </div>
-        <div class="informacoes-anuncio">
-          <h3>${anuncio.titulo}</h3>
-          <h3>R$ ${anuncio.preco}</h3>
-          <p>${anuncio.endereco}</p>
-        </div>
-      `;
+      <div class="imagem-anuncio">
+        <img src="${imagemAnuncio}" alt="${anuncio.titulo}">
+      </div>
+      <div class="informacoes-anuncio">
+        <h3>${anuncio.titulo}</h3>
+        <h3>R$ ${anuncio.preco}</h3>
+        <p><i class="fas fa-map-marker-alt"></i> ${anuncio.endereco}</p>
+      </div>
+    `;
 
     // Encontra o usuário que postou o anúncio
     const usuarioAnunciante = usuarios.find(usuario => usuario.anuncios && usuario.anuncios.includes(anuncio));
@@ -80,6 +135,7 @@ function exibirAnuncios() {
     container.appendChild(anuncioElement);
   });
 }
+
 
 
 // Função para exibir detalhes do anúncio
@@ -107,8 +163,6 @@ window.onload = function () {
       buscarAnuncios();
     }
   });
-
-  ajustarCardsPorLinha()
 };
 
 
@@ -156,7 +210,7 @@ function buscarAnuncios() {
     anuncioElement.classList.add('anuncio');
     anuncioElement.innerHTML = `
       <div class="imagem-anuncio">
-        <img src="../assets/imagem-casa-placeholder.png" alt="imagem-placeholder">
+        <img src="../assets/Captura de tela 2025-07-15 143226.png" alt="imagem-placeholder">
       </div>
       <div class="informacoes-anuncio">
         <h3>${anuncio.titulo}</h3>
@@ -177,39 +231,69 @@ function buscarAnuncios() {
   });
 }
 
-//   const container = document.getElementById('container-anuncios');
-//   console.log(container.children)
-//   const cards = Array.from(container.children);
-//   console.log(cards)
-//   // Resetar classes
-//   for (const child of container.children) {
-//     console.log(child.tagName);
-//   }
-//   // container.children.forEach(card => {
-//   //   card.classList.remove('single-in-row', 'centered');
-//   // });
+function buscarAnuncios() {
+  const termo = document.querySelector('.input-pesquisa').value.trim().toLowerCase();
+  const container = document.querySelector('.container-anuncios');
 
-//   // Agrupar por linhas (mesmo offsetTop)
-//   const linhas = {};
-//   cards.forEach(card => {
-//     const top = card.offsetTop;
-//     if (!linhas[top]) linhas[top] = [];
-//     linhas[top].push(card);
-//   });
+  // Limpa o container antes de tudo
+  container.innerHTML = '';
 
-//   Object.values(linhas).forEach(cardsNaLinha => {
-//     if (cardsNaLinha.length === 1) {
-//       cardsNaLinha[0].classList.add('single-in-row');
-//     } else {
-//       cardsNaLinha.forEach(card => card.classList.add('centered'));
-//     }
-//   });
-// }
+  // Se o campo estiver vazio, exibe todos os anúncios
+  if (termo === '') {
+    exibirAnuncios();
+    return;
+  }
 
-// ajustarCardsPorLinha();
-// window.addEventListener('resize', ajustarCardsPorLinha);
+  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   ajustarCardsPorLinha();
-//   window.addEventListener('resize', ajustarCardsPorLinha);
-// });
+  let anuncios = [];
+  usuarios.forEach(usuario => {
+    if (usuario.anuncios) {
+      anuncios = anuncios.concat(usuario.anuncios); // Adiciona os anúncios de cada usuário
+    }
+  });
+
+  const anunciosFiltrados = anuncios.filter(anuncio => {
+    const precoStr = anuncio.preco.toString().toLowerCase();
+    return (
+      anuncio.titulo.toLowerCase().includes(termo) ||
+      precoStr.includes(termo) ||
+      (anuncio.descricao && anuncio.descricao.toLowerCase().includes(termo)) ||
+      (anuncio.endereco && anuncio.endereco.toLowerCase().includes(termo))
+    );
+  });
+
+  if (anunciosFiltrados.length === 0) {
+    container.innerHTML = '<p>Nenhum anúncio encontrado.</p>';
+    return;
+  }
+
+  anunciosFiltrados.forEach(anuncio => {
+    const anuncioElement = document.createElement('div');
+    anuncioElement.classList.add('anuncio');
+
+    // Pega a primeira foto do anúncio ou uma imagem padrão caso não tenha
+    const imagemAnuncio = anuncio.fotos && anuncio.fotos.length > 0 ? anuncio.fotos[0] : '../assets/imagem-padrao.jpg'; // Defina uma imagem padrão
+
+    anuncioElement.innerHTML = `
+      <div class="imagem-anuncio">
+        <img src="${imagemAnuncio}" alt="${anuncio.titulo}">
+      </div>
+      <div class="informacoes-anuncio">
+        <h3>${anuncio.titulo}</h3>
+        <h3>R$ ${anuncio.preco}</h3>
+        <p>${anuncio.endereco}</p>
+      </div>
+    `;
+
+    const usuarioAnunciante = usuarios.find(usuario => usuario.anuncios && usuario.anuncios.includes(anuncio));
+
+    anuncioElement.addEventListener('click', () => {
+      localStorage.setItem('anuncioSelecionado', JSON.stringify(anuncio));
+      localStorage.setItem('usuarioAnunciante', JSON.stringify(usuarioAnunciante));
+      window.location.href = './PaginaDetalhesAnuncio/detalhes-anuncio.html';
+    });
+
+    container.appendChild(anuncioElement);
+  });
+}
