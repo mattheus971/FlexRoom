@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +7,35 @@
     <link rel="stylesheet" href="meus-anuncios.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
-<header>
-    <div class="logo" onclick="window.location.href='../home.html'">LOGO</div>
-</header>
-
 <body>
-    <div class="container-anuncios">
-        
+    <header>
+      <div class="logo" onclick="window.location.href='../home.html'">LOGO</div>
+      <div class="campo-pesquisa">
+        <input type="search" class="input-pesquisa" placeholder="Pesquisar...">
+        <button class="botao-pesquisar" onclick="buscarAnuncios()">
+          <i class="fas fa-search" style="font-size: 18px"></i>
+        </button>
+      </div>
+      <div class="campo-usuario-cabecalho">
+        <button class="botao-anunciar" onclick="verificarCadastroUsuario()">Anunciar</button>
+       <div class="avatar-usuario" id="avatar-inicial-usuario" onclick="window.location.href='../informacoes-usuario.html'"></div> 
+      </div>
+      
+    </header>
+
+    <div class="container-pai">
+        <main class="container">
+        <h1 class="titulo-pagina">Meus Anúncios</h1>
+
+        <div id="anuncios-lista" class="anuncios-lista">
+            <!-- Os anúncios serão inseridos aqui dinamicamente -->
+        </div>
+    </main>
     </div>
+    
 
     <script src="meus-anuncios.js"></script>
 </body>
-
 </html>
+
+

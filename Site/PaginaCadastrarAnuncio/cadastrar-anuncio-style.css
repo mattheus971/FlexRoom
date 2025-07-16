@@ -19,7 +19,7 @@ header {
     left: 0;
     right: 0;
     height: 75px;
-    background-color: #00cf96;
+    background-color: #2C3E50;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,7 +131,7 @@ header {
   left: 0;
   right: 0;
   height: 64px;
-  background-color: #00cf96;
+  background-color: #2C3E50;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -142,7 +142,7 @@ header {
 header .logo {
   font-size: 48px;
   font-weight: bold;
-  color: #007455;
+  color: whitesmoke;
   cursor: pointer;
 }
 
@@ -198,7 +198,7 @@ header .avatar-usuario {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: solid #00926a 2px;
+  border: solid #4A90E2 2px;
   font-size: 24px;
   font-weight: medium;
   cursor: pointer;

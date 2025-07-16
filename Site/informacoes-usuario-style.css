@@ -14,7 +14,7 @@ body{
 header{
   height: 64px;
   width: 100%;
-  background-color: #007455; 
+  background-color: #2C3E50; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@ header{
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  margin: 48px auto;
+  margin-bottom: 32px;
 }
 
 .container-usuario{
@@ -38,7 +38,7 @@ header{
 
 .avatar-usuario{
   background-color:whitesmoke;
-  border: solid #007455 4px;
+  border: solid #4A90E2 4px;
   height: 128px;
   width: 128px;
   border-radius: 50%;
@@ -49,7 +49,9 @@ header{
 }
 
 .container-usuario h1{
-  color: rgb(68, 68, 68);
+  color: #2C3E50;
+  font-weight: 500;
+  
 }
 
 .container-anuncios{
@@ -235,7 +237,7 @@ header {
   left: 0;
   right: 0;
   height: 64px;
-  background-color: #00cf96;
+  background-color: #2C3E50;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -246,7 +248,7 @@ header {
 header .logo {
   font-size: 48px;
   font-weight: bold;
-  color: #007455; 
+  color: whitesmoke; 
   cursor: pointer;
 }
 
@@ -262,7 +264,7 @@ header .input-pesquisa {
   width: 100%;
   padding: 8px;
   background-color: whitesmoke;
-  border: solid #007455 1px;
+  border: solid #4A90E2 1px;
   border-right: none;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -302,7 +304,7 @@ header .avatar-usuario {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: solid #00926a 2px;
+  border: solid #4A90E2 2px;
   font-size: 24px;
   font-weight: medium;
   cursor: pointer;
@@ -323,11 +325,22 @@ header .avatar-usuario {
   align-items: center;
   justify-content: center;
   width: 100%;
-  border: solid 1px #007455;
+  border: solid 1px #4A90E2;
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
-  background-color: #00926a;
+  background-color: #4A90E2;
   color: white;
 
+}
+
+.botao-anunciar:hover{
+  background-color: #4e98ed;
+}
+
+.titulo-pagina{
+  color: rgb(170, 170, 170);
+  font-weight: 400;
+  font-size: 28px;
+  margin: 32px 0;
 }

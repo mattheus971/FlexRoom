@@ -1,0 +1,103 @@
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Anúncios</title>
+    <link rel="stylesheet" href="meus-anuncios.css">
+</head>
+<body>
+
+
+    <main class="container">
+        <h1>Meus Anúncios</h1>
+
+        <div id="anuncios-lista" class="anuncios-lista">
+           
+        </div>
+    </main>
+
+    <script src="meus-anuncios.js"></script>
+</body>
+</html>
+
+
+
+ -->
+
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Anúncio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.location.href='../home.html'">LOGO</div>
+        <div class="campo-usuario-cabecalho">
+            <div class="avatar-usuario" id="avatar-inicial-usuario" onclick="window.location.href='../informacoes-usuario.html'"></div> 
+        </div>
+    </header>
+
+    <main class="right">
+        <form>
+            <h1>Editar Anúncio</h1>
+
+            <label for="titulo">Título:</label>
+            <input type="text" id="tituloEditAnuncio" name="titulo" value="Casa de praia" required>
+
+            <label for="tipo">Tipo de imóvel:</label>
+            <select id="tipoEditAnuncio" name="tipo">
+                <option selected>Casa</option>
+                <option>Apartamento</option>
+                <option>Kitnet</option>
+            </select>
+
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricaoEditAnuncio" name="descricao" rows="4">Casa confortável com piscina e vista para o mar.</textarea>
+
+            <label for="quartos">Número de quartos:</label>
+            <input type="number" id="quartosEditAnuncio" name="quartos" value="3">
+
+            <label for="banheiros">Número de banheiros:</label>
+            <input type="number" id="banheirosEditAnuncio" name="banheiros" value="2">
+
+            <label for="area">Área (m²):</label>
+            <input type="number" id="areaEditAnuncio" name="area" value="150">
+
+            <label for="garagem">Inclui garagem?</label>
+            <input type="number" id="garagemEditAnuncio" name="garagem" value="1">
+
+            <label for="detalhes">Mobília:</label>
+            <select id="detalhesEditAnuncio" name="detalhes">
+                <option>Mobilado</option>
+                <option selected>Sem mobília</option>
+            </select>
+
+            <label for="condominio">Detalhe do condomínio:</label>
+            <select id="condominioEditAnuncio" name="condominio">
+                <option selected>Condomínio fechado</option>
+                <option>Sem condomínio</option>
+            </select>
+
+            <label for="preco">Preço (R$):</label>
+            <input type="number" step="0.01" id="precoEditAnuncio" name="preco" value="3500" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="enderecoEditAnuncio" name="endereco" value="Rua do Sol, 123" required>
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cepEditAnuncio" name="cep" value="12345-678" required>
+
+            <label for="fotos">Fotos do imóvel:</label>
+            <input type="file" id="fotoEditAnuncio" name="foto" accept="image/*" multiple>
+
+            <input type="submit" value="Salvar alterações">
+        </form>
+    </main>
+    
+</body>
+</html>
+

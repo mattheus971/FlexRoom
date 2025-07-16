@@ -15,7 +15,7 @@ header {
   left: 0;
   right: 0;
   height: 64px;
-  background-color: #00cf96;
+  background-color: #2C3E50;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +26,7 @@ header {
 header .logo {
   font-size: 48px;
   font-weight: bold;
-  color: #007455;
+  color: whitesmoke;
   cursor: pointer;
 }
 
@@ -42,13 +42,14 @@ header .input-pesquisa {
   width: 100%;
   padding: 8px;
   background-color: whitesmoke;
-  border: solid #008662 1px;
+  border: solid #4A90E2 1px;
   border-right: none;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-size: 12px;
+  outline: none;  /* Remove a borda do foco */
 }
 
 header .input-pesquisa::placeholder{
@@ -57,11 +58,11 @@ header .input-pesquisa::placeholder{
 }
 
 .botao-pesquisar{
-  background-color: #008662;
+  background-color: #4A90E2;
   color: whitesmoke;
   height: 32px;
   width: 64px;
-  border: solid #007455 1px;
+  border: solid #4A90E2 1px;
   border-left: 0;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -71,7 +72,7 @@ header .input-pesquisa::placeholder{
 }
 
 .botao-pesquisar:hover{
-  background-color: #007c5b;
+  background-color: #4e98ed;
 }
 
 header .avatar-usuario {
@@ -82,7 +83,7 @@ header .avatar-usuario {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: solid #008662 2px;
+  border: solid #4A90E2 2px;
   font-size: 24px;
   font-weight: medium;
   cursor: pointer;
@@ -103,24 +104,24 @@ header .avatar-usuario {
   align-items: center;
   justify-content: center;
   width: 50%;
-  border: solid 1px #007455;
+  border: solid 1px #4A90E2;
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
-  background-color: #008662;
+  background-color: #4A90E2;
   color: white;
 
 }
 
 .botao-anunciar:hover{
-  background-color: #007c5b;
+  background-color: #4e98ed;
 }
 
 /* Estilo geral do container de anúncios */
 .container-anuncios {
   display: flex;                /* Muda para flexbox */
   flex-wrap: wrap;              /* Permite que os itens que não couberem vão para a próxima linha */
-  padding: 64px;
+  padding: 32px 64px;
   gap: 32px;
   width: 100%;
   align-items: center;
@@ -133,30 +134,35 @@ header .avatar-usuario {
   width: 100%;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 32px 0;
 }
 
 /* Estilo do anúncio */
 .anuncio {
   background-color: #fff; /* Fundo branco para cada anúncio */
-  border-radius: 16px;
+ 
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
   padding: 0px; /* Espaçamento interno */
   display: flex;
   flex-direction: column; /* Coloca a imagem e as informações lado a lado */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   align-items: center; /* Alinha verticalmente os itens */
   width: 500px;
-  min-height: 450px;
+  min-height: 400px;
   cursor: pointer;
-  border: solid 1px gray;
-  transition: 0.s ease;
+  
   overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Efeito de hover para o anúncio */
 .anuncio:hover {
-  transform: translateY(-8px); /* Levanta o anúncio levemente */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  border: solid 1px #00926a;
+  /* transform: translateY(-8px); Levanta o anúncio levemente */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.20);
+  /* border: solid 1px #4A90E2; */
+  transition: 0.3s ease;
 }
 
 .imagem-anuncio {
@@ -181,7 +187,8 @@ header .avatar-usuario {
  max-width: 100%;
  display: flex;
  flex-direction: column;
- gap: 20px;
+ gap: 10px;
+ overflow: hidden;
 }
 
 .informacoes-anuncio p {
@@ -200,7 +207,7 @@ header .avatar-usuario {
 /* Título do anúncio */
 .anuncio h3 {
   font-weight: light;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #333; /* Cor escura para o título */
   margin: 0;
   font-weight: 500;
@@ -236,6 +243,18 @@ header .avatar-usuario {
       height: 100%;
       object-fit: cover; /* Faz a imagem preencher a div sem deformar */
       object-position: center; /* Centraliza a imagem */
+      width: 100%;
+     transition: transform 0.5s ease;
     }
+
+.anuncio:hover .imagem-anuncio img {
+    transform: scale(1.05);  /* Aumenta a imagem 10% */
+}
+
+.titulo-pagina{
+  color: rgb(170, 170, 170);
+  font-weight: 400;
+  font-size: 28px;
+}
 
 
