@@ -1,105 +1,72 @@
-// // Função para carregar os dados do anúncio para edição
-// function carregarAnuncioParaEdicao() {
-//     const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
-//     const params = new URLSearchParams(window.location.search);
-//     const anuncioId = Number(params.get('id')); // Pega o id da URL
-
-//     if (!usuarioLogado || !anuncioId) {
-//         alert("Anúncio não encontrado.");
-//         window.location.href = "meus-anuncios.html";
-//         return;
-//     }
-
-//     const anuncio = usuarioLogado.anuncios.find(a => a.id === anuncioId);
-//     if (!anuncio) {
-//         alert("Anúncio não encontrado.");
-//         window.location.href = "meus-anuncios.html";
-//         return;
-//     }
-
-//     // Preenche os campos com os dados do anúncio
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Recupera os dados do anúncio do localStorage
+//   const anuncio = JSON.parse(localStorage.getItem('anuncioSelecionado')); // Recupera o objeto salvo
+  
+//   // Verifica se o anúncio existe
+//   if (anuncio) {
+//     // Preenche os campos da página com os dados do anúncio-----------------------------------------------
 //     document.getElementById('inputEditTitulo').value = anuncio.titulo;
-//     document.getElementById('inputEditTipo').value = anuncio.tipoImovel;
-//     document.getElementById('inputEditdescricao').value = anuncio.descricao;
-//     document.getElementById('inputEditQuartos').value = anuncio.quartos;
-//     document.getElementById('inputEditBanheiros').value = anuncio.banheiros;
-//     document.getElementById('inputEditArea').value = anuncio.area;
-//     document.getElementById('inputEditGaragem').value = anuncio.garagem;
-//     document.getElementById('inputEditMobilia').value = anuncio.detalheImovel;
-//     document.getElementById('inputEditCondominio').value = anuncio.detalheCondominio;
-//     document.getElementById('precoCadPreco').value = anuncio.preco;
-//     document.getElementById('inputEditEndereco').value = anuncio.endereco;
-//     document.getElementById('inputEditCep').value = anuncio.cep;
-// }
+//     document.getElementById('precoEditAnuncio').value = anuncio.preco;
+//     document.getElementById('inputEditDescricao').value = anuncio.descricao || 'Sem descrição disponível';
+//     document.getElementById('inputEditArea').value = anuncio.area ? anuncio.area : 'Não especificado';
+//     document.getElementById('inputEditQuartos').value = anuncio.quartos || 'Não especificado';
+//     document.getElementById('inputEditBanheiros').value = anuncio.banheiros || 'Não especificado';
+//     document.getElementById('inputEditGaragens').value = anuncio.garagem || 'Não especificado';
+//     document.getElementById('inputEditDetalhes').value = anuncio.mobiliado ? 'Sim' : 'Não';
+//     document.getElementById('inputEditEndereco').value = anuncio.endereco || 'Não especificado';
+//     document.getElementById('inputEditTipo').value = anuncio.tipoImovel || 'Não especificado';
+//     document.getElementById('inputEditCep').value = anuncio.cep || 'Não informado';
 
-// // Função para salvar as alterações
-// function salvarAlteracoes() {
+//     // Adiciona a imagem do anúncio (ou imagem padrão se não especificada)
+//     const imagemAnuncio = document.getElementById('imagem-anuncio');
+//     imagemAnuncio.src = anuncio.foto ? anuncio.foto : '../assets/imagem-padrao.jpg';
+//     imagemAnuncio.alt = `Imagem do anúncio: ${anuncio.titulo}`;
+//   } else {
+//     // Exibe uma mensagem se o anúncio não for encontrado no localStorage
+//     const containerConteudo = document.querySelector('.anuncio-detalhado');
+//     containerConteudo.innerHTML = '<p>Anúncio não encontrado.</p>';
+//   }
+
+//   // Função para excluir o anúncio-------------------------------------------------------------
+//   const excluirAnuncio = () => {
+//     // Recupera o usuário logado
 //     const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
-//     const params = new URLSearchParams(window.location.search);
-//     const anuncioId = Number(params.get('id')); // Pega o id da URL
 
-//     if (!usuarioLogado || !anuncioId) {
-//         alert("Anúncio não encontrado.");
-//         return;
+//     if (usuarioLogado) {
+//       // Remove o anúncio da lista de anúncios do usuário logado
+//       usuarioLogado.anuncios = usuarioLogado.anuncios.filter(a => a.id !== anuncio.id);
+      
+//       // Atualiza o localStorage com o usuário modificado
+//       localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
 //     }
 
-//     const anuncioIndex = usuarioLogado.anuncios.findIndex(a => a.id === anuncioId);
-//     if (anuncioIndex === -1) {
-//         alert("Anúncio não encontrado.");
-//         return;
+//     // Recupera todos os usuários
+//     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+//     // Remove o anúncio de cada usuário que tenha esse anúncio
+//     for (let i = 0; i < usuarios.length; i++) {
+//       usuarios[i].anuncios = usuarios[i].anuncios.filter(a => a.id !== anuncio.id);
 //     }
 
-//     const anuncioEditado = {
-//         ...usuarioLogado.anuncios[anuncioIndex],
-//         titulo: document.getElementById('inputEditTitulo').value,
-//         tipoImovel: document.getElementById('inputEditTipo').value,
-//         descricao: document.getElementById('inputEditdescricao').value,
-//         quartos: document.getElementById('inputEditQuartos').value,
-//         banheiros: document.getElementById('inputEditBanheiros').value,
-//         area: document.getElementById('inputEditArea').value,
-//         garagem: document.getElementById('inputEditGaragem').value,
-//         detalheImovel: document.getElementById('inputEditMobilia').value,
-//         detalheCondominio: document.getElementById('inputEditCondominio').value,
-//         preco: document.getElementById('precoCadPreco').value,
-//         endereco: document.getElementById('inputEditEndereco').value,
-//         cep: document.getElementById('inputEditCep').value,
-//         foto: document.getElementById('inputEditFoto').files[0] ? `/assets/${document.getElementById('inputEditFoto').files[0].name}` : usuarioLogado.anuncios[anuncioIndex].foto
-//     };
+//     // Atualiza o localStorage com a lista de usuários modificada
+//     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
-//     usuarioLogado.anuncios[anuncioIndex] = anuncioEditado;
-
-//     localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
-//     alert("Anúncio editado com sucesso!");
-//     window.location.href = "../PaginaMeusAnuncios/meus-anuncios.html";
-// }
-
-// // Função para excluir o anúncio
-// function excluirAnuncio() {
-//     const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
-//     const params = new URLSearchParams(window.location.search);
-//     const anuncioId = Number(params.get('id'));
-
-//     if (!usuarioLogado || !anuncioId) {
-//         alert("Anúncio não encontrado.");
-//         return;
-//     }
-
-//     usuarioLogado.anuncios = usuarioLogado.anuncios.filter(anuncio => anuncio.id !== anuncioId);
-//     localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
-//     alert("Anúncio excluído com sucesso!");
-//     window.location.href = "meus-anuncios.html";
-// }
-
-// // Quando a página carregar
-// window.onload = function () {
-//     // carregarAnuncioParaEdicao();
+//     // Remove o anúncio do localStorage
+//     localStorage.removeItem('anuncioSelecionado');
     
-//     const form = document.querySelector('form');
-//     form.addEventListener('submit', function (event) {
-//         event.preventDefault();
-//         salvarAlteracoes();
-//     });
-// };
+//     // Redireciona ou exibe mensagem de sucesso
+//     window.location.href = "../PaginaMeusAnuncios/meus-anuncios.html"; // Pode redirecionar ou exibir mensagem
+//   };
+
+//   // Evento do botão excluir
+//   const botaoExcluir = document.querySelector('.botao-excluir');
+//   botaoExcluir.addEventListener('click', (event) => {
+//     event.preventDefault(); // Impede o envio do formulário
+//     if (confirm("Você tem certeza que deseja excluir este anúncio?")) {
+//       excluirAnuncio();
+//     }
+//   });
+// });
 
 
 
@@ -109,14 +76,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Recupera os dados do anúncio do localStorage
   const anuncio = JSON.parse(localStorage.getItem('anuncioSelecionado')); // Recupera o objeto salvo
-  
-  // Verifica se o anúncio existe
+
   if (anuncio) {
     // Preenche os campos da página com os dados do anúncio
     document.getElementById('inputEditTitulo').value = anuncio.titulo;
     document.getElementById('precoEditAnuncio').value = anuncio.preco;
     document.getElementById('inputEditDescricao').value = anuncio.descricao || 'Sem descrição disponível';
-    document.getElementById('inputEditArea').value = anuncio.area ? anuncio.area: 'Não especificado';
+    document.getElementById('inputEditArea').value = anuncio.area ? anuncio.area : 'Não especificado';
     document.getElementById('inputEditQuartos').value = anuncio.quartos || 'Não especificado';
     document.getElementById('inputEditBanheiros').value = anuncio.banheiros || 'Não especificado';
     document.getElementById('inputEditGaragens').value = anuncio.garagem || 'Não especificado';
@@ -124,16 +90,102 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('inputEditEndereco').value = anuncio.endereco || 'Não especificado';
     document.getElementById('inputEditTipo').value = anuncio.tipoImovel || 'Não especificado';
     document.getElementById('inputEditCep').value = anuncio.cep || 'Não informado';
-
-
-    
-    // Adiciona a imagem do anúncio (ou imagem padrão se não especificada)
     const imagemAnuncio = document.getElementById('imagem-anuncio');
     imagemAnuncio.src = anuncio.foto ? anuncio.foto : '../assets/imagem-padrao.jpg';
     imagemAnuncio.alt = `Imagem do anúncio: ${anuncio.titulo}`;
   } else {
-    // Exibe uma mensagem se o anúncio não for encontrado no localStorage
     const containerConteudo = document.querySelector('.anuncio-detalhado');
     containerConteudo.innerHTML = '<p>Anúncio não encontrado.</p>';
   }
+
+  // Função para excluir o anúncio
+  const excluirAnuncio = () => {
+    // Recupera o usuário logado
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+    if (usuarioLogado) {
+      // Remove o anúncio da lista de anúncios do usuário logado
+      usuarioLogado.anuncios = usuarioLogado.anuncios.filter(a => a.id !== anuncio.id);
+      
+      // Atualiza o localStorage com o usuário modificado
+      localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
+    }
+
+    // Recupera todos os usuários
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    // Remove o anúncio de cada usuário que tenha esse anúncio
+    for (let i = 0; i < usuarios.length; i++) {
+      usuarios[i].anuncios = usuarios[i].anuncios.filter(a => a.id !== anuncio.id);
+    }
+
+    // Atualiza o localStorage com a lista de usuários modificada
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    // Remove o anúncio do localStorage
+    localStorage.removeItem('anuncioSelecionado');
+    
+    // Redireciona ou exibe mensagem de sucesso
+    window.location.href = "../PaginaMeusAnuncios/meus-anuncios.html"; // Pode redirecionar ou exibir mensagem
+  };
+
+  // Função para atualizar o anúncio
+  const atualizarAnuncio = () => {
+    // Coleta os novos dados do formulário
+    const novoAnuncio = {
+      id: anuncio.id,  // mantém o mesmo ID para identificar o anúncio
+      titulo: document.getElementById('inputEditTitulo').value,
+      preco: parseFloat(document.getElementById('precoEditAnuncio').value),
+      descricao: document.getElementById('inputEditDescricao').value,
+      area: parseFloat(document.getElementById('inputEditArea').value),
+      quartos: parseInt(document.getElementById('inputEditQuartos').value),
+      banheiros: parseInt(document.getElementById('inputEditBanheiros').value),
+      garagem: parseInt(document.getElementById('inputEditGaragens').value),
+      mobiliado: document.getElementById('inputEditDetalhes').value.toLowerCase() === 'sim',
+      endereco: document.getElementById('inputEditEndereco').value,
+      tipoImovel: document.getElementById('inputEditTipo').value,
+      cep: document.getElementById('inputEditCep').value,
+      foto: document.getElementById('inputEditFoto').files[0] ? URL.createObjectURL(document.getElementById('inputEditFoto').files[0]) : anuncio.foto
+    };
+
+    // Atualiza o anúncio no localStorage (usuarioLogado)
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+    if (usuarioLogado) {
+      usuarioLogado.anuncios = usuarioLogado.anuncios.map(a => a.id === anuncio.id ? novoAnuncio : a);
+      localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
+    }
+
+    // Atualiza o anúncio na lista de usuários
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    for (let i = 0; i < usuarios.length; i++) {
+      usuarios[i].anuncios = usuarios[i].anuncios.map(a => a.id === anuncio.id ? novoAnuncio : a);
+    }
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    // Atualiza o anúncio selecionado no localStorage
+    localStorage.setItem('anuncioSelecionado', JSON.stringify(novoAnuncio));
+
+    // Redireciona ou exibe mensagem de sucesso
+    window.location.href = "../PaginaMeusAnuncios/meus-anuncios.html"; // Redireciona para a página de anúncios
+  };
+
+  // Evento para salvar o anúncio
+  const botaoSalvar = document.querySelector('.botao-salvar');
+  botaoSalvar.addEventListener('click', (event) => {
+    event.preventDefault();  // Impede o envio do formulário
+    if (confirm("Você tem certeza que deseja salvar as alterações?")) {
+      atualizarAnuncio();
+    }
+  });
+
+  // Evento do botão excluir
+  const botaoExcluir = document.querySelector('.botao-excluir');
+  botaoExcluir.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (confirm("Você tem certeza que deseja excluir este anúncio?")) {
+      excluirAnuncio();
+    }
+  });
 });
+
+

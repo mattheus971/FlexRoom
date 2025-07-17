@@ -145,7 +145,7 @@ function verificarCadastroUsuario() {
 
   if (!usuarioLogado.nascimento || !usuarioLogado.telefone) {
     alert("Por favor, adicione sua data de nascimento e telefone antes de anunciar.");
-    window.location.href = "informacoes-usuario.html";
+    window.location.href = "../informacoes-usuario.html";
     return;
   }
 

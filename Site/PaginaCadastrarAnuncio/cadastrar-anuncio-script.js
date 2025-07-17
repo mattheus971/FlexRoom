@@ -11,7 +11,7 @@ form.addEventListener("submit", function (event) {
   const area = Number(document.getElementById("areaCadAnuncio").value);
   const garagem = document.getElementById("garagemCadAnuncio").value;
   const detalheImovel = document.getElementById("detalhesCadAnuncio").value;
-  const detalheCondominio = document.getElementById("condominioCadAnuncio").value;
+  // const detalheCondominio = document.getElementById("condominioCadAnuncio").value;
   const preco = Number(document.getElementById("precoCadAnuncio").value);
   const endereco = document.getElementById("enderecoCadAnuncio").value.trim();
   const cep = document.getElementById("cepCadAnuncio").value.trim();
@@ -57,7 +57,7 @@ form.addEventListener("submit", function (event) {
     area,
     garagem,
     detalheImovel,
-    detalheCondominio,
+    // detalheCondominio,
     preco,
     endereco,
     cep,

@@ -265,3 +265,35 @@ header .avatar-usuario {
   object-position: center;
   width: 100%;
 }
+
+.botoes-acao{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.botoes-acao button{
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  width: 20%;
+  color: white;
+  font-size: 16px;
+  box-shadow: #2C3E50;
+  cursor: pointer;
+}
+
+.botao-salvar{
+  background-color: #4A90E2;
+  transition: 0.3s ease-in-out;
+}
+
+.botao-excluir{
+  background-color: red;
+  transition: 0.3s ease-in-out;
+}
+
+.botoes-acao button:hover{
+  scale: 1.1;
+}

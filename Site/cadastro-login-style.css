@@ -23,14 +23,14 @@ body{
     width: 40%;
     background-color: #2C3E50;
     flex-direction: column;
-    padding-left: 100px;
-    padding-right: 100px;
+    /* padding-left: 100px;
+    padding-right: 100px; */
     text-align: center;
     overflow: hidden;
 }
 
 .logo{
-    width: 500px;
+    width: 70%;
     height: auto;
 }
 
