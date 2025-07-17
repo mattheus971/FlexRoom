@@ -75,15 +75,23 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Verifica se o anúncio existe
   if (anuncio) {
+    
+    const preco = Number(anuncio.preco).toFixed(0); // Remove as casas decimais
+
+    // Formata o valor com separador de milhar
+    const precoFormatado = preco.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    // Insere o valor formatado no HTML
+    document.getElementById('price').innerHTML = `R$ ${precoFormatado}`;
     // Preenche os campos da página com os dados do anúncio
     document.getElementById('title').textContent = anuncio.titulo;
-    document.getElementById('price').textContent = `R\$ ${Number(anuncio.preco).toFixed(2)}`;
+    // document.getElementById('price').textContent = `R\$ ${Number(anuncio.preco).toFixed(2)}`;
     document.getElementById('description').textContent = anuncio.descricao || 'Sem descrição disponível';
     document.getElementById('area').textContent = anuncio.area ? `${anuncio.area} m²` : 'Não especificado';
     document.getElementById('quartos').textContent = anuncio.quartos || 'Não especificado';
     document.getElementById('banheiros').textContent = anuncio.banheiros || 'Não especificado';
     document.getElementById('garagem').textContent = anuncio.garagem || 'Não especificado';
-    document.getElementById('mobiliado').textContent = anuncio.mobiliado ? 'Sim' : 'Não';
+    document.getElementById('mobiliado').textContent = anuncio.detalheImovel || 'Não especificado';
     document.getElementById('endereco').textContent = anuncio.endereco || 'Não especificado';
     document.getElementById('cep').textContent = anuncio.cep || 'Não informado';
 

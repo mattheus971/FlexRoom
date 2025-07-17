@@ -26,10 +26,11 @@ body{
     padding-left: 100px;
     padding-right: 100px;
     text-align: center;
+    overflow: hidden;
 }
 
 .logo{
-    width: 300px;
+    width: 500px;
     height: auto;
 }
 
@@ -48,6 +49,7 @@ body{
     height: 100%;
     width: 60%;
     gap: 32px;
+    overflow: hidden;
 }
 
 .container-formulario{
@@ -132,7 +134,7 @@ p{
 }
 
 .botao-seletor:hover{
-    background-color: #4A90E2;
+    background-color: #3672b7;
     color: #ffffff;
 }
 
