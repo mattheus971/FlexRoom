@@ -51,7 +51,8 @@ body {
     padding: 24px;
     gap: 8px;
     border-radius: 8px;
-    box-shadow: rgba(121, 121, 121, 0.233) 0px 10px 10px;
+    box-shadow: rgba(72, 72, 72, 0.233) 0px 10px 10px;
+    border: solid 1px rgb(204, 204, 204);
 }
 
 .details {
@@ -61,11 +62,13 @@ body {
   
   h1 {
     margin-top: 0;
-    margin-bottom: 8px;
+    margin-bottom: 8px;;
   }
 
   #title{
     font-weight: 500;
+    margin-bottom: 12px;
+    color: rgb(75, 75, 75);
   }
 
   .label{
@@ -75,8 +78,7 @@ body {
   .price {
     font-size: 1.5rem;
     font-weight: 500;
-    color: #2a7a2a;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
   
   .description {
@@ -93,7 +95,7 @@ body {
   header{
     height: 64px;
     width: 100%;
-    background-color: #00cf96;
+    background-color: #2C3E50;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,7 +113,7 @@ body {
   left: 0;
   right: 0;
   height: 64px;
-  background-color: #00cf96;
+  background-color: #2C3E50;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -122,7 +124,7 @@ body {
 header .logo {
   font-size: 48px;
   font-weight: bold;
-  color: #007455;
+  color: whitesmoke;
   cursor: pointer;
 }
 
@@ -138,7 +140,7 @@ header .input-pesquisa {
   width: 100%;
   padding: 8px;
   background-color: whitesmoke;
-  border: solid #007455 1px;
+  border: solid #4A90E2 1px;
   border-right: none;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -153,7 +155,7 @@ header .input-pesquisa::placeholder{
 }
 
 .botao-pesquisar{
-  background-color: #00926a;
+  background-color: #4A90E2;
   color: whitesmoke;
   height: 32px;
   width: 64px;
@@ -178,7 +180,7 @@ header .avatar-usuario {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: solid #00926a 2px;
+  border: solid #4A90E2 2px;
   font-size: 24px;
   font-weight: medium;
   cursor: pointer;
@@ -199,13 +201,17 @@ header .avatar-usuario {
   align-items: center;
   justify-content: center;
   width: 50%;
-  border: solid 1px #007455;
+  border: solid 1px #4A90E2;
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
-  background-color: #00926a;
+  background-color: #4A90E2;
   color: white;
 
+}
+
+.botao-anunciar:hover{
+  background-color: #4e98ed;
 }
 
 /* 
@@ -224,10 +230,11 @@ header .avatar-usuario {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 32px;
+  border-top: 1px gray solid;
 
-  border-radius: 8px;
+  /* border-radius: 8px; */
   padding: 32px;
-  box-shadow: rgba(121, 121, 121, 0.233) 0px 10px 10px;
+  /* box-shadow: rgba(121, 121, 121, 0.233) 0px 10px 10px; */
 }
 
 .info-item {
@@ -263,6 +270,25 @@ header .avatar-usuario {
   object-fit: cover; /* Faz a imagem preencher a div sem deformar */
   object-position: center; /* Centraliza a imagem */
   overflow: hidden;
+}
+
+.logo img {
+  height: 48px;  /* Define o tamanho da logo */
+  width: auto;   /* Mantém a proporção da logo */
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+header .logo {
+  font-size: 48px;
+  font-weight: bold;
+  color: whitesmoke;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* .info-grid span{

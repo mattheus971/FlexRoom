@@ -28,6 +28,9 @@ header .logo {
   font-weight: bold;
   color: whitesmoke;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .campo-pesquisa{
@@ -256,5 +259,16 @@ header .avatar-usuario {
   font-weight: 400;
   font-size: 28px;
 }
+
+.logo img {
+  height: 48px;  /* Define o tamanho da logo */
+  width: auto;   /* Mantém a proporção da logo */
+  transition: opacity 0.2s ease-in-out;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
 
 

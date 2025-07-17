@@ -344,3 +344,22 @@ header .avatar-usuario {
   font-size: 28px;
   margin: 32px 0;
 }
+
+.logo img {
+  height: 48px;  /* Define o tamanho da logo */
+  width: auto;   /* Mantém a proporção da logo */
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+header .logo {
+  font-size: 48px;
+  font-weight: bold;
+  color: whitesmoke;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

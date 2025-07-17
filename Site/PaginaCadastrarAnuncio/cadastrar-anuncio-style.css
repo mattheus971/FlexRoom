@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     display: flex;
     /* flex-direction: column; */
-    background-color: #f5f5f5;
+    background-color: #2c3e5039;
 }
 
 /* Cabeçalho */
@@ -32,7 +32,21 @@ header .logo {
     font-weight: bold;
     color: #007455;
     cursor: pointer;
-    transition: opacity 0.2s ease-in-out;
+}
+
+.logo img {
+  height: 48px;  /* Define o tamanho da logo */
+  width: auto;   /* Mantém a proporção da logo */
+}
+
+header .logo {
+  font-size: 48px;
+  font-weight: bold;
+  color: whitesmoke;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo:hover {
@@ -51,18 +65,18 @@ header .logo {
 
 /* Formulário */
 form {
-    background-color: white;
+    
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
     width: 100%;
-    max-width: 500px;
+    max-width: 800px;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #2C3E50;
 }
 
 label {
@@ -83,7 +97,7 @@ input, select, textarea {
 }
 
 input:focus, select:focus, textarea:focus {
-    border-color: #00c08b;
+    border-color: #4A90E2;
 }
 
 input[type="file"] {
@@ -96,7 +110,7 @@ textarea {
 }
 
 input[type="submit"] {
-    background-color: #00c08b;
+    background-color: #4A90E2;
     color: white;
     border: none;
     cursor: pointer;
@@ -108,7 +122,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #009f75;
+    background-color: #3672b7;
 }
 
 /* Responsividade */
@@ -173,7 +187,7 @@ header .input-pesquisa::placeholder{
 }
 
 .botao-pesquisar{
-  background-color: #00926a;
+  background-color: #4A90E2;
   color: whitesmoke;
   height: 32px;
   width: 64px;
@@ -219,11 +233,11 @@ header .avatar-usuario {
   align-items: center;
   justify-content: center;
   width: 100%;
-  border: solid 1px #007455;
+  border: solid 1px #4A90E2;
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
-  background-color: #00926a;
+  background-color: #4A90E2;
   color: white;
 
 }

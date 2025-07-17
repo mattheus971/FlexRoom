@@ -12,7 +12,9 @@
 <body>
   <div id="pagina-home">
     <header>
-      <div class="logo" onclick="window.location.href='home.html'">LOGO</div>
+      <div class="logo" onclick="window.location.href='home.html'" title="Ir para página inicial">
+        <img src="assets/logo-simples.png" alt="Logo">
+      </div>
       <div class="campo-pesquisa">
         <input type="search" class="input-pesquisa" placeholder="Pesquisar...">
         <button class="botao-pesquisar" onclick="buscarAnuncios()">
@@ -21,7 +23,7 @@
       </div>
       <div class="campo-usuario-cabecalho">
         <button class="botao-anunciar" onclick="verificarCadastroUsuario()">Anunciar</button>
-       <div class="avatar-usuario" id="avatar-inicial-usuario" onclick="window.location.href='informacoes-usuario.html'"></div> 
+       <div class="avatar-usuario" id="avatar-inicial-usuario" onclick="window.location.href='informacoes-usuario.html'" title="Ver minhas informações"></div> 
       </div>
       
     </header>

@@ -13,11 +13,13 @@
 <body>
 
   <header>
-    <div class="logo" onclick="window.location.href='../home.html'">LOGO</div>
+    <div class="logo" onclick="window.location.href='../home.html'" title="Ir para página inicial">
+      <img src="../assets/logo-simples.png" alt="Logo">
+    </div>
     <div class="campo-usuario-cabecalho">
       <button class="botao-anunciar" onclick="verificarCadastroUsuario()">Anunciar</button>
       <div class="avatar-usuario" id="avatar-inicial-usuario"
-        onclick="window.location.href='../informacoes-usuario.html'"></div>
+        onclick="window.location.href='../informacoes-usuario.html'" title="Ver minhas informações"></div>
     </div>
 
   </header>
@@ -84,9 +86,13 @@
   </div>
 
   <div class="info-item">
-    <span class="label">CEP</span>
-    <span id="cep"></span>
+    <i class="fas fa-map-pin"></i>
+    <div>
+      <span class="label">CEP</span>
+      <span id="cep"></span>
+    </div>
   </div>
+  
 
   <div class="info-item">
     <i class="fas fa-map-marker-alt"></i>
