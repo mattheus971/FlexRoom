@@ -125,7 +125,7 @@ header .avatar-usuario {
   display: flex;                /* Muda para flexbox */
   flex-wrap: wrap;              /* Permite que os itens que não couberem vão para a próxima linha */
   padding: 32px 64px;
-  gap: 32px;
+  gap: 50px;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -257,7 +257,7 @@ header .avatar-usuario {
 .titulo-pagina{
   color: rgb(170, 170, 170);
   font-weight: 400;
-  font-size: 28px;
+  font-size: 20px;
 }
 
 .logo img {

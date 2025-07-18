@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const precoFormatado = preco.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
     // Insere o valor formatado no HTML
-    document.getElementById('price').innerHTML = `R$ ${precoFormatado}`;
+    document.getElementById('price').innerHTML = `R$ ${precoFormatado} / mês`;
     // Preenche os campos da página com os dados do anúncio
     document.getElementById('title').textContent = anuncio.titulo;
     // document.getElementById('price').textContent = `R\$ ${Number(anuncio.preco).toFixed(2)}`;
