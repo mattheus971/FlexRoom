@@ -49,7 +49,26 @@ window.onclick = function(event) {
   }
 }
 
-window.onload = function() {
+// window.onload = function() {
+//   const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+//   if (!usuarioLogado) {
+//     window.location.href = 'cadastro-login.html';
+//     return;
+//   }
+
+//   // Atualiza a saudação e as informações do usuário
+//   atualizarAvatarInicial(usuarioLogado);
+
+//   document.getElementById('saudacao-usuario').innerText = "Olá " + (usuarioLogado.nome || '');
+//   document.getElementById('informacao-nome-usuario').innerText = usuarioLogado.nome || '';
+//   document.getElementById('informacao-email-usuario').innerText = usuarioLogado.email || '';
+//   document.getElementById('informacao-senha-usuario').innerText = usuarioLogado.senha || '';
+//   document.getElementById('informacao-nascimento-usuario').innerText = usuarioLogado.nascimento || '';
+//   document.getElementById('informacao-telefone-usuario').innerText = usuarioLogado.telefone || '';
+// }
+
+window.onload = function () {
   const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 
   if (!usuarioLogado) {
@@ -64,9 +83,23 @@ window.onload = function() {
   document.getElementById('informacao-nome-usuario').innerText = usuarioLogado.nome || '';
   document.getElementById('informacao-email-usuario').innerText = usuarioLogado.email || '';
   document.getElementById('informacao-senha-usuario').innerText = usuarioLogado.senha || '';
-  document.getElementById('informacao-nascimento-usuario').innerText = usuarioLogado.nascimento || '';
+
+  // Formata a data para DD-MM-AAAA
+  if (usuarioLogado.nascimento) {
+    const data = new Date(usuarioLogado.nascimento);
+    const dia = String(data.getDate()).padStart(2, '0');
+    const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês começa do 0
+    const ano = data.getFullYear();
+    const nascimentoFormatado = `${dia}-${mes}-${ano}`;
+    document.getElementById('informacao-nascimento-usuario').innerText = nascimentoFormatado;
+  } else {
+    document.getElementById('informacao-nascimento-usuario').innerText = '';
+  }
+
   document.getElementById('informacao-telefone-usuario').innerText = usuarioLogado.telefone || '';
 }
+
+
 
 function salvarMudancas() {
   var newValue = '';
@@ -107,7 +140,7 @@ function salvarMudancas() {
 
   // Atualiza a lista de usuários no localStorage
   let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-  const index = usuarios.findIndex(u => u.id === usuarioLogado.id); // Aqui mudou de email para id
+  const index = usuarios.findIndex(u => u.id === usuarioLogado.id); // Busca o usuario pelo ID
 
   if (index !== -1) {
     usuarios[index] = usuarioLogado;
@@ -115,6 +148,8 @@ function salvarMudancas() {
   }
 
   fecharModal();
+  atualizarAvatarInicial(usuarioLogado);
+  document.getElementById('saudacao-usuario').innerText = "Olá " + (usuarioLogado.nome || '');
 }
 
 // JavaScript
@@ -130,8 +165,15 @@ function atualizarAvatarInicial(usuarioLogado) {
 }
 
 function logout() {
-  localStorage.removeItem('usuarioLogado');
-  window.location.href = 'cadastro-login.html';
+  const confirmarLogout = confirm("Tem certeza que deseja sair?");
+  
+  if (confirmarLogout) {
+    localStorage.removeItem('usuarioLogado');
+    window.location.href = 'cadastro-login.html';
+  } else {
+    // O usuário cancelou a operação, nenhuma ação será tomada
+    console.log("Logout cancelado pelo usuário.");
+  }
 }
 
 function verificarCadastroUsuario() {

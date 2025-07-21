@@ -1,6 +1,6 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f4f4f4;
+    background-color: white;
     margin: 0;
     padding: 0;
 }
@@ -35,45 +35,59 @@ header {
 }
 
 .anuncio-card {
-    background-color: white;
+    /* background-color: white; */
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    padding: 15px;
+    width: 220px;
+    min-height: 300px;
+    padding: 16px;
     text-align: center;
     transition: transform 0.3s;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
-.anuncio-card:hover {
-    transform: translateY(-10px);
+.anuncio-card:hover{
+     transform: scale(1.05)
+}
+
+.imagem-anuncio{
+  height: 220px;
+  width: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
+
 }
 
 .anuncio-card img {
-    width: 100%;
-    height: 120px;
+
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px;
 }
 
 .anuncio-card h3 {
     font-size: 1.1em;
-    margin: 10px 0;
+    margin:  8px 0;
     font-weight: 500;
+    line-height: 1.1em;
 }
 
 .anuncio-card p {
     color: #777;
     font-size: 0.9em;
+    line-height: 1.1em;
 }
 
 .anuncio-card .valor {
     font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 10px;
+    font-weight: 500;
+    margin-top: 0px;
+    color: black;
 }
 
 header {

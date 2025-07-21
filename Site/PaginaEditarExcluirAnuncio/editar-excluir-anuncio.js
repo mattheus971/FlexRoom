@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('inputEditQuartos').value = anuncio.quartos || 'Não especificado';
     document.getElementById('inputEditBanheiros').value = anuncio.banheiros || 'Não especificado';
     document.getElementById('inputEditGaragens').value = anuncio.garagem || 'Não especificado';
-    document.getElementById('inputEditDetalhes').value = anuncio.mobiliado ? 'Sim' : 'Não';
+    document.getElementById('inputEditDetalhes').value = anuncio.detalheImovel || 'Não especificado';
     document.getElementById('inputEditEndereco').value = anuncio.endereco || 'Não especificado';
     document.getElementById('inputEditTipo').value = anuncio.tipoImovel || 'Não especificado';
     document.getElementById('inputEditCep').value = anuncio.cep || 'Não informado';
@@ -131,10 +131,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Função para atualizar o anúncio
   const atualizarAnuncio = () => {
-    
+    // Recupera o input de arquivo
+    const fotoInput = document.getElementById('inputEditFoto');
+    const arquivo = fotoInput.files[0];
+
+    // Caminho da foto (se houver um novo arquivo selecionado, atualiza; senão, mantém o original)
+    let foto = anuncio.foto;  // Mantém a foto original como padrão
+    if (arquivo) {
+      const extensoesPermitidas = ["image/jpeg", "image/png", "image/jpg", "image/webp"];
+
+      // Valida extensão
+      if (!extensoesPermitidas.includes(arquivo.type)) {
+        alert("Por favor, selecione uma imagem");
+        return;
+      }
+
+      // Gera o caminho relativo da nova foto
+      foto = `/assets/${arquivo.name}`;
+      
+    }
+
     // Coleta os novos dados do formulário
     const novoAnuncio = {
-      id: anuncio.id,  // mantém o mesmo ID para identificar o anúncio
+      id: anuncio.id, // mantém o mesmo ID para identificar o anúncio
       titulo: document.getElementById('inputEditTitulo').value,
       preco: parseFloat(document.getElementById('precoEditAnuncio').value),
       descricao: document.getElementById('inputEditDescricao').value,
@@ -142,11 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
       quartos: parseInt(document.getElementById('inputEditQuartos').value),
       banheiros: parseInt(document.getElementById('inputEditBanheiros').value),
       garagem: parseInt(document.getElementById('inputEditGaragens').value),
-      mobiliado: document.getElementById('inputEditDetalhes').value.toLowerCase() === 'sim',
+      detalheImovel: document.getElementById('inputEditDetalhes').value,
       endereco: document.getElementById('inputEditEndereco').value,
       tipoImovel: document.getElementById('inputEditTipo').value,
       cep: document.getElementById('inputEditCep').value,
-      foto: document.getElementById('inputEditFoto').files[0] ? URL.createObjectURL(document.getElementById('inputEditFoto').files[0]) : anuncio.foto
+      foto: foto // Atualiza o campo foto
     };
 
     // Atualiza o anúncio no localStorage (usuarioLogado)

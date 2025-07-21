@@ -106,7 +106,7 @@ function exibirAnuncios() {
     anuncioElement.classList.add('anuncio');
 
     // Usa a imagem do anúncio ou uma imagem padrão caso nenhum caminho tenha sido cadastrado
-    const imagemAnuncio = anuncio.foto ? anuncio.foto : './assets/imagem-padrao.jpg'; // Caminho da imagem padrão na ausência de foto cadastrada
+    const imagemAnuncio = anuncio.foto ? anuncio.foto : './assets/imagem-padrao.png'; // Caminho da imagem padrão na ausência de foto cadastrada
 
     anuncioElement.innerHTML = `
       <div class="imagem-anuncio">
@@ -284,7 +284,7 @@ function buscarAnuncios() {
       </div>
       <div class="informacoes-anuncio">
         <h3>${anuncio.titulo}</h3>
-        <h3>R\$ ${anuncio.preco.toFixed(2)}</h3>
+        <h3>R$ ${Math.floor(anuncio.preco).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</h3>
         <p><i class="fas fa-map-marker-alt"></i> ${anuncio.endereco}</p>
       </div>
     `;

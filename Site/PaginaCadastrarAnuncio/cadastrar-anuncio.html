@@ -67,9 +67,21 @@
             <label for="cep">CEP</label>
             <input type="text" id="cepCadAnuncio" name="cep" required>
 
-            <label for="fotos">Foto do Imóvel</label>
-            <input type="file" id="fotoCadAnuncio" name="foto" accept="image/*" multiple>
+            <div style="display: none;">
+                <label for="fotos">Foto do Imóvel</label>
+                <input type="file" id="fotoCadAnuncio" name="foto" accept="image/*" multiple>
+            </div>
 
+            <div class="imagem-anuncio">
+                <img src="/assets/imagem-padrao.png" alt="" id="imagem-anuncio">
+            </div>
+
+            <script>
+                // A função que será chamada quando a imagem for clicada
+                document.getElementById('imagem-anuncio').addEventListener('click', function () {
+                    document.getElementById('fotoCadAnuncio').click();
+                });
+            </script>
 
             <input type="submit" value="Anunciar">
         </form>

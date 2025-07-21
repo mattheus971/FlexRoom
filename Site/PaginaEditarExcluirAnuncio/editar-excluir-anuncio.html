@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Anúncio</title>
     <link rel="stylesheet" href="editar-excluir-anuncio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header>
-      <div class="logo" onclick="window.location.href='../home.html'" title="Ir para página inicial">
-        <img src="../assets/logo-simples.png" alt="Logo">
-      </div>
-      <div class="campo-usuario-cabecalho">
-       <div class="avatar-usuario" id="avatar-inicial-usuario" onclick="window.location.href='../informacoes-usuario.html'" title="Ver minhas informações"></div> 
-      </div>
-      
+        <div class="logo" onclick="window.location.href='../home.html'" title="Ir para página inicial">
+            <img src="../assets/logo-simples.png" alt="Logo">
+        </div>
+        <div class="campo-usuario-cabecalho">
+            <div class="avatar-usuario" id="avatar-inicial-usuario"
+                onclick="window.location.href='../informacoes-usuario.html'" title="Ver minhas informações"></div>
+        </div>
+
     </header>
 
     <main class="right">
@@ -54,20 +58,35 @@
             <label for="cep">CEP:</label>
             <input type="text" id="inputEditCep" name="cep" required>
 
-            <label for="fotos">Foto do imóvel:</label>
+            <div style="display: none;">
+                <label for="fotos">Foto do imóvel</label>
             <input type="file" id="inputEditFoto" name="foto" accept="image/*" multiple>
+            </div>
+            
             <div class="imagem-anuncio">
                 <img src="" alt="" id="imagem-anuncio">
             </div>
 
+            <script>
+                // A função que será chamada quando a imagem for clicada
+                document.getElementById('imagem-anuncio').addEventListener('click', function () {
+                    document.getElementById('inputEditFoto').click();
+                });
+            </script>
+
 
             <div class="botoes-acao">
-                <button class="botao-salvar">SALVAR</button>
-                <button class="botao-excluir">EXCLUIR</button>
+                <button class="botao-salvar">
+                    <i class="fa fa-save"></i> SALVAR
+                </button>
+                <button class="botao-excluir">
+                    <i class="fa fa-trash"></i> EXCLUIR
+                </button>
             </div>
         </form>
     </main>
 
     <script src="editar-excluir-anuncio.js"></script>
 </body>
+
 </html>

@@ -51,8 +51,12 @@ body {
     padding: 24px;
     gap: 8px;
     border-radius: 8px;
-    box-shadow: rgba(72, 72, 72, 0.233) 0px 10px 10px;
-    border: solid 1px rgb(204, 204, 204);
+    box-shadow: rgba(156, 156, 156, 0.233) 0px 10px 10px;
+    border: solid 1px rgb(229, 229, 229);
+}
+
+.dados-anunciante h3{
+  color: #2C3E50;
 }
 
 .details {
@@ -68,7 +72,6 @@ body {
   #title{
     font-weight: 500;
     margin-bottom: 12px;
-    color: rgb(75, 75, 75);
   }
 
   .label{
@@ -78,11 +81,12 @@ body {
   .price {
     font-size: 1.5rem;
     font-weight: 500;
-    margin-bottom: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
   
   .description {
-    margin-bottom: 15px;
+  margin-bottom: 16px;
     line-height: 1.4;
     max-width: 80%;
     min-height: 50px;
@@ -334,7 +338,7 @@ header .logo {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 32px;
-  border-top: 1px gray solid;
+  border-top: 1px rgb(179, 179, 179) solid;
 
   /* border-radius: 8px; */
   padding: 32px;
@@ -348,7 +352,7 @@ header .logo {
 }
 
 .info-item i {
-  color: rgb(138, 138, 138);
+  color: rgb(173, 173, 173);
   margin-top: 4px;
 }
 
@@ -363,7 +367,7 @@ header .logo {
 
 .label {
   font-size: 1px;
-  color: rgb(138, 138, 138);
+  color: rgb(173, 173, 173);
   margin-bottom: 2px;
   text-transform: uppercase;
 }

@@ -24,6 +24,8 @@ form.addEventListener("submit", function (event) {
 
   // Captura a foto carregada
   const fotoInput = document.getElementById("fotoCadAnuncio");
+  console.log(fotoInput);
+  
   const arquivo = fotoInput.files[0];
 
   if (!arquivo) {
@@ -78,7 +80,7 @@ form.addEventListener("submit", function (event) {
 
   alert("Anúncio cadastrado com sucesso!");
   form.reset();
-  window.location.href = "../home.html"; // Redireciona para a página principal
+  window.location.href = "../PaginaMeusAnuncios/meus-anuncios.html"; // Redireciona para a página principal
 });
 
   // Função para mostrar a inicial do nome do usuário no avatar

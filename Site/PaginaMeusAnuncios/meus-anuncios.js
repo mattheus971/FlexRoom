@@ -31,7 +31,9 @@ function exibirAnuncios() {
     cardAnuncio.classList.add('anuncio-card');
 
     cardAnuncio.innerHTML = `
+            <div class="imagem-anuncio">
             <img src="${anuncio.foto}" alt="Imagem do imóvel">
+            </div>
             <h3>${anuncio.titulo}</h3>
             <p>${anuncio.endereco}</p>
             <p class="valor">R$ ${anuncio.preco.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>

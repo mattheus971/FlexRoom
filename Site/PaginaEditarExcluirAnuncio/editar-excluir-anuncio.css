@@ -57,7 +57,6 @@ header .logo {
 .right {
     flex: 1;
     display: flex;
-    align-items: center;
     justify-content: center;
     padding-top: 100px; 
     padding-bottom: 40px;
@@ -71,6 +70,7 @@ form {
 
     width: 100%;
     max-width: 800px;
+    padding-top: 0;
 }
 
 h1 {
@@ -258,13 +258,18 @@ header .avatar-usuario {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  cursor: pointer;
+  border: solid 1px white;
 }
 
 #imagem-anuncio{
   object-fit: cover;
   object-position: center;
   width: 100%;
+}
+
+#imagem-anuncio:hover{
+  opacity: 0.8;
 }
 
 .botoes-acao{
@@ -280,9 +285,9 @@ header .avatar-usuario {
   border-radius: 8px;
   width: 20%;
   color: white;
-  font-size: 16px;
   box-shadow: #2C3E50;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .botao-salvar{
@@ -293,8 +298,13 @@ header .avatar-usuario {
 .botao-excluir{
   background-color: red;
   transition: 0.3s ease-in-out;
+  
 }
 
 .botoes-acao button:hover{
   scale: 1.1;
+}
+
+.botoes-acao i{
+  margin: 8px;
 }

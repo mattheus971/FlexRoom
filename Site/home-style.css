@@ -100,6 +100,7 @@ header .avatar-usuario {
   flex-direction: row;
   margin: 0;
   padding: 0;
+  min-width: 50px;
 }
 
 .botao-anunciar{
@@ -113,7 +114,6 @@ header .avatar-usuario {
   cursor: pointer;
   background-color: #4A90E2;
   color: white;
-
 }
 
 .botao-anunciar:hover{
@@ -145,8 +145,8 @@ header .avatar-usuario {
 .anuncio {
   background-color: #fff; /* Fundo branco para cada anúncio */
  
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   padding: 0px; /* Espaçamento interno */
   display: flex;
   flex-direction: column; /* Coloca a imagem e as informações lado a lado */
