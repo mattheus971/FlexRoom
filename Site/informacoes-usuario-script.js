@@ -176,6 +176,40 @@ function logout() {
   }
 }
 
+function excluirUsuario() {
+    // Obtém os dados dos usuários atualmente no localStorage
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+    const cofirmacao=confirm('Tem certeza que deseja excluir sua conta?')
+
+    if(!cofirmacao){
+      return
+    }
+    
+    // Verifica se há um usuário logado
+    if (!usuarioLogado || !usuarioLogado.id) {
+        alert('Nenhum usuário logado ou ID inválido!');
+        return;
+    }
+
+    const usuarioId = usuarioLogado.id;
+
+    // Filtra os usuários, removendo aquele com o ID correspondente
+    const usuariosAtualizados = usuarios.filter(usuario => usuario.id !== usuarioId);
+
+    // Atualiza o localStorage com a lista de usuários excluindo o usuário removido
+    localStorage.setItem('usuarios', JSON.stringify(usuariosAtualizados));
+
+    // Remove também o usuário logado
+    localStorage.removeItem('usuarioLogado');
+
+    alert('Usuário excluído com sucesso!');
+    
+    // Redireciona o usuário para a página inicial ou faz outra ação necessária
+    window.location.href = '/home.html'; // Altere para o link desejado
+}
+
 function verificarCadastroUsuario() {
   const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 
